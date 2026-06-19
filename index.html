@@ -3,380 +3,698 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Romeo + Sohn GmbH | Gipsergeschäft Schlieren</title>
-<meta name="description" content="Romeo + Sohn GmbH Schlieren – Ihr Gipsergeschäft und Maler im Raum Zürich. Sauber, zuverlässig, fachgerecht. Jetzt kostenlose Offerte anfragen.">
-<meta name="theme-color" content="#0b5fb0">
-
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Romeo + Sohn GmbH | Gipsergeschäft Schlieren">
-<meta property="og:description" content="Ihr kompetenter und zuverlässiger Maler und Gipser im Raum Zürich.">
-<meta property="og:locale" content="de_CH">
-
+<title>Romeo + Sohn GmbH · 4 Design Directions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css">
-<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================ GLOBAL ============================ */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow-x:clip;max-width:100%}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img,svg{display:block;max-width:100%}
+button{font:inherit;cursor:pointer;border:none;background:none}
+input,textarea,select{font-size:16px}  /* prevent iOS zoom on focus */
+
+.mockup{display:none;min-height:100vh}
+.mockup.active{display:block;animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ============================ SWITCHER ============================ */
+.switcher{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+  background:#0a0a0a;color:#fff;padding:6px;border-radius:100px;
+  display:flex;gap:2px;z-index:9999;box-shadow:0 20px 60px -10px rgba(0,0,0,.4);
+  font-family:'Inter',sans-serif;font-size:13px;
+}
+.switcher button{
+  padding:10px 18px;border-radius:100px;color:#888;font-weight:500;
+  transition:all .2s ease;display:flex;align-items:center;gap:8px;
+}
+.switcher button .n{font-family:'JetBrains Mono',monospace;font-size:11px;opacity:.6}
+.switcher button:hover{color:#fff}
+.switcher button.on{background:#fff;color:#0a0a0a}
+.switcher button.on .n{opacity:.5;color:#0a0a0a}
+.switcher .label{font-size:11px;font-family:'JetBrains Mono',monospace;color:#666;padding:10px 14px 10px 18px;border-right:1px solid #222;letter-spacing:.05em}
+@media(max-width:720px){
+  .switcher{bottom:12px;font-size:11px;padding:4px}
+  .switcher .label{display:none}
+  .switcher button{padding:8px 12px}
+  .switcher button span:not(.n){display:none}
+}
+
+/* ============================================================
+   ============== MOCKUP 01 - EDITORIAL =======================
+   ============================================================ */
+.m1{background:#f6f5f1;color:#0e0e0e;font-family:'Inter Tight','Inter',sans-serif}
+.m1 .wrap{max-width:1320px;margin:0 auto;padding:0 40px}
+.m1 .nav{display:flex;justify-content:space-between;align-items:center;padding:32px 0;border-bottom:1px solid rgba(0,0,0,.08)}
+.m1 .brand{font-weight:700;font-size:14px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.m1 .brand .dot{width:8px;height:8px;background:#0b5fb0;border-radius:50%}
+.m1 .nav ul{list-style:none;display:flex;gap:36px;font-size:13.5px;color:#555}
+.m1 .nav ul a:hover{color:#000}
+.m1 .nav .meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:#777;letter-spacing:.04em}
+.m1 .hero{padding:140px 0 120px;border-bottom:1px solid rgba(0,0,0,.08)}
+.m1 .hero-grid{display:grid;grid-template-columns:1fr 320px;gap:80px;align-items:end}
+.m1 .micro{font-family:'JetBrains Mono',monospace;font-size:11px;color:#888;letter-spacing:.12em;text-transform:uppercase;margin-bottom:40px;display:flex;gap:14px;align-items:center}
+.m1 .micro::before{content:"";width:30px;height:1px;background:#0b5fb0}
+.m1 h1{font-size:clamp(54px,8.5vw,128px);font-weight:500;line-height:.92;letter-spacing:-.04em}
+.m1 h1 em{font-style:italic;font-family:'Instrument Serif',serif;font-weight:400;color:#0b5fb0}
+.m1 .hero-aside{display:flex;flex-direction:column;gap:24px;padding-bottom:14px}
+.m1 .hero-aside p{font-size:15px;line-height:1.55;color:#444}
+.m1 .hero-aside .link{font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:8px;padding-bottom:4px;border-bottom:1px solid #0e0e0e;width:fit-content}
+.m1 .hero-aside .link:hover{gap:14px;transition:gap .25s}
+
+.m1 .sec{padding:120px 0;border-bottom:1px solid rgba(0,0,0,.08)}
+.m1 .sec-head{display:grid;grid-template-columns:160px 1fr;gap:60px;margin-bottom:80px;align-items:start}
+.m1 .sec-head .label{font-family:'JetBrains Mono',monospace;font-size:11px;color:#888;letter-spacing:.12em;text-transform:uppercase;padding-top:10px}
+.m1 .sec-head h2{font-size:clamp(36px,4.5vw,64px);font-weight:500;letter-spacing:-.03em;line-height:1;max-width:18ch}
+.m1 .services-list{display:grid;grid-template-columns:160px 1fr;gap:60px;align-items:start}
+.m1 .services-list .col-l{font-family:'JetBrains Mono',monospace;font-size:11px;color:#888;letter-spacing:.12em;text-transform:uppercase;padding-top:14px}
+.m1 .svc-item{display:grid;grid-template-columns:80px 1.2fr 2fr;gap:40px;padding:34px 0;border-top:1px solid rgba(0,0,0,.1);cursor:pointer;transition:padding .3s}
+.m1 .svc-item:hover{padding-left:20px}
+.m1 .svc-item:last-child{border-bottom:1px solid rgba(0,0,0,.1)}
+.m1 .svc-item .num{font-family:'JetBrains Mono',monospace;font-size:13px;color:#888}
+.m1 .svc-item .name{font-size:26px;font-weight:500;letter-spacing:-.02em}
+.m1 .svc-item .desc{font-size:14.5px;line-height:1.55;color:#555;max-width:50ch}
+
+.m1 .quote{display:grid;grid-template-columns:160px 1fr;gap:60px;align-items:start}
+.m1 .quote .label{font-family:'JetBrains Mono',monospace;font-size:11px;color:#888;letter-spacing:.12em;text-transform:uppercase;padding-top:24px}
+.m1 .quote blockquote{font-family:'Instrument Serif',serif;font-size:clamp(28px,4vw,48px);line-height:1.2;font-weight:400;letter-spacing:-.01em;max-width:22ch}
+.m1 .quote blockquote::before{content:"„";color:#0b5fb0;font-size:1.4em;line-height:0;vertical-align:-.2em;margin-right:.05em}
+.m1 .quote cite{font-style:normal;font-size:13px;color:#666;margin-top:32px;display:block;letter-spacing:.04em}
+
+.m1 .cta-foot{padding:120px 0 80px}
+.m1 .cta-foot h3{font-size:clamp(40px,6vw,96px);font-weight:500;line-height:.95;letter-spacing:-.04em;max-width:18ch;margin-bottom:50px}
+.m1 .cta-foot h3 em{font-family:'Instrument Serif',serif;font-style:italic;color:#0b5fb0;font-weight:400}
+.m1 .cta-foot .btn{display:inline-flex;align-items:center;gap:14px;padding:20px 32px;background:#0e0e0e;color:#fff;border-radius:100px;font-size:14px;font-weight:500;transition:all .25s}
+.m1 .cta-foot .btn:hover{background:#0b5fb0;gap:22px}
+.m1 footer{padding:40px 0;border-top:1px solid rgba(0,0,0,.08);display:flex;justify-content:space-between;font-size:12px;color:#777;font-family:'JetBrains Mono',monospace;letter-spacing:.04em}
+@media(max-width:900px){
+  .m1 .wrap{padding:0 24px}
+  .m1 .nav ul,.m1 .nav .meta{display:none}
+  .m1 .hero{padding:80px 0}
+  .m1 .hero-grid,.m1 .sec-head,.m1 .services-list,.m1 .quote{grid-template-columns:1fr;gap:30px}
+  .m1 .svc-item{grid-template-columns:50px 1fr;gap:20px}
+  .m1 .svc-item .desc{grid-column:1/-1;padding-left:70px}
+  .m1 footer{flex-direction:column;gap:8px;padding-bottom:100px}
+  .m1 .sec{padding:70px 0}
+  .m1 .hero-aside .link{padding:14px 0;font-size:15px}
+}
+
+/* ============================================================
+   ============== MOCKUP 02 - BOLD TRADE ======================
+   ============================================================ */
+.m2{background:#fff;color:#0a0a0a;font-family:'Inter',sans-serif}
+.m2 .wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+.m2 .nav{position:absolute;top:0;left:0;right:0;z-index:5;padding:28px 0;color:#fff}
+.m2 .nav .wrap{display:flex;justify-content:space-between;align-items:center}
+.m2 .nav .brand{font-weight:800;font-size:18px;letter-spacing:-.02em}
+.m2 .nav .brand span{color:#f5b942}
+.m2 .nav ul{list-style:none;display:flex;gap:30px;font-size:14px;font-weight:500}
+.m2 .nav ul a{opacity:.85}
+.m2 .nav ul a:hover{opacity:1}
+.m2 .nav .btn-call{background:#fff;color:#0a2540;padding:12px 22px;border-radius:6px;font-size:13px;font-weight:600;display:inline-flex;gap:8px;align-items:center}
+
+.m2 .hero{background:#0a2540;color:#fff;padding:160px 0 130px;position:relative;overflow:hidden}
+.m2 .hero::before{content:"";position:absolute;top:0;right:-10%;width:60%;height:100%;background:radial-gradient(ellipse at top right,rgba(245,185,66,.18),transparent 60%)}
+.m2 .hero::after{content:"";position:absolute;bottom:0;right:8%;width:280px;height:280px;border:1px solid rgba(255,255,255,.1);border-radius:50%}
+.m2 .hero .wrap{position:relative;z-index:2}
+.m2 .hero .badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:8px 16px;border-radius:100px;font-size:12.5px;margin-bottom:32px;font-weight:500}
+.m2 .hero .badge .pulse{width:7px;height:7px;background:#f5b942;border-radius:50%;box-shadow:0 0 0 4px rgba(245,185,66,.2)}
+.m2 .hero h1{font-size:clamp(48px,7.5vw,108px);font-weight:800;line-height:.98;letter-spacing:-.035em;max-width:14ch}
+.m2 .hero h1 .accent{color:#f5b942}
+.m2 .hero p.lead{font-size:18px;color:#a8b8ce;max-width:46ch;margin-top:28px;line-height:1.55}
+.m2 .hero .cta{display:flex;gap:14px;margin-top:44px;flex-wrap:wrap}
+.m2 .hero .btn{padding:18px 30px;border-radius:8px;font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:10px;transition:transform .2s}
+.m2 .hero .btn-1{background:#f5b942;color:#0a2540}
+.m2 .hero .btn-2{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25)}
+.m2 .hero .btn:hover{transform:translateY(-2px)}
+.m2 .hero .stats{display:flex;gap:60px;margin-top:80px;padding-top:36px;border-top:1px solid rgba(255,255,255,.1);max-width:680px}
+.m2 .hero .stat b{display:block;font-size:42px;font-weight:800;letter-spacing:-.03em;color:#fff}
+.m2 .hero .stat span{font-size:12.5px;color:#a8b8ce;font-weight:500;letter-spacing:.04em;text-transform:uppercase;margin-top:6px;display:block}
+
+.m2 .services{padding:120px 0;background:#fff}
+.m2 .sec-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px;gap:40px;flex-wrap:wrap}
+.m2 .sec-head .kicker{font-size:12.5px;font-weight:600;color:#f5b942;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px}
+.m2 .sec-head h2{font-size:clamp(36px,5vw,60px);font-weight:800;letter-spacing:-.03em;line-height:1.05;max-width:18ch}
+.m2 .sec-head p{font-size:16px;color:#5a6675;max-width:36ch}
+.m2 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.m2 .card{background:#f5f7fa;border-radius:14px;padding:34px;transition:all .3s ease;cursor:pointer;border:1px solid transparent}
+.m2 .card:hover{background:#0a2540;color:#fff;transform:translateY(-4px)}
+.m2 .card:hover .icon{background:#f5b942;color:#0a2540}
+.m2 .card:hover .arr{transform:translate(4px,-4px);color:#f5b942}
+.m2 .card .icon{width:48px;height:48px;background:#0a2540;color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;transition:.3s}
+.m2 .card h3{font-size:20px;font-weight:700;letter-spacing:-.01em;margin-bottom:10px}
+.m2 .card p{font-size:14.5px;line-height:1.5;color:#5a6675;transition:color .3s}
+.m2 .card:hover p{color:#a8b8ce}
+.m2 .card .arr{display:inline-block;margin-top:18px;color:#5a6675;font-size:18px;transition:.3s}
+
+.m2 .trust{background:#f5f7fa;padding:100px 0}
+.m2 .trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.m2 .testimonial{background:#fff;padding:32px;border-radius:14px;border:1px solid #e6ebf2}
+.m2 .testimonial .stars{color:#f5b942;font-size:16px;letter-spacing:2px;margin-bottom:18px}
+.m2 .testimonial p{font-size:15.5px;line-height:1.55;color:#2a3441;margin-bottom:24px}
+.m2 .testimonial .who{display:flex;align-items:center;gap:14px;padding-top:18px;border-top:1px solid #e6ebf2}
+.m2 .testimonial .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#0a2540,#1d4373);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.m2 .testimonial .who b{display:block;font-size:14px;font-weight:600}
+.m2 .testimonial .who span{font-size:12.5px;color:#7a8696}
+
+.m2 .cta-band{background:#0a2540;color:#fff;padding:100px 0;text-align:center;position:relative;overflow:hidden}
+.m2 .cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(245,185,66,.12),transparent 60%)}
+.m2 .cta-band .wrap{position:relative}
+.m2 .cta-band h2{font-size:clamp(34px,5vw,60px);font-weight:800;letter-spacing:-.03em;line-height:1.05;max-width:20ch;margin:0 auto 20px}
+.m2 .cta-band p{color:#a8b8ce;max-width:50ch;margin:0 auto 36px;font-size:16.5px}
+.m2 .cta-band .btn{display:inline-flex;align-items:center;gap:12px;background:#f5b942;color:#0a2540;padding:20px 36px;border-radius:8px;font-weight:700;font-size:16px}
+
+.m2 footer{background:#061a30;color:#7a8696;padding:50px 0;font-size:13.5px}
+.m2 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.m2 footer a{color:#a8b8ce}
+
+@media(max-width:900px){
+  .m2 .nav ul,.m2 .nav .btn-call{display:none}
+  .m2 .hero{padding:120px 0 80px}
+  .m2 .hero .stats{flex-wrap:wrap;gap:30px 50px;margin-top:50px}
+  .m2 .hero .stat b{font-size:32px}
+  .m2 .svc-grid,.m2 .trust-grid{grid-template-columns:1fr}
+  .m2 .services,.m2 .trust,.m2 .cta-band{padding:70px 0}
+  .m2 footer{padding-bottom:100px}
+  .m2 footer .wrap{flex-direction:column}
+  .m2 footer a{display:inline-block;padding:8px 0;min-height:36px}
+}
+
+/* ============================================================
+   ============== MOCKUP 03 - BOUTIQUE ========================
+   ============================================================ */
+.m3{background:#f4eee4;color:#1a1a1a;font-family:'Inter',sans-serif}
+.m3 .wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+.m3 .nav{padding:28px 0;display:flex;justify-content:center}
+.m3 .nav .pill{background:rgba(255,255,255,.7);backdrop-filter:blur(20px);border:1px solid rgba(0,0,0,.05);border-radius:100px;padding:8px 12px 8px 24px;display:flex;align-items:center;gap:30px;box-shadow:0 8px 32px -8px rgba(0,0,0,.08)}
+.m3 .nav .brand{font-weight:600;font-size:15px;letter-spacing:-.01em;display:flex;align-items:center;gap:8px}
+.m3 .nav .brand .sq{width:18px;height:18px;background:#4a6b5d;border-radius:5px}
+.m3 .nav ul{list-style:none;display:flex;gap:24px;font-size:14px;color:#555;font-weight:500}
+.m3 .nav ul a:hover{color:#1a1a1a}
+.m3 .nav .btn{background:#1a1a1a;color:#fff;padding:10px 18px;border-radius:100px;font-size:13px;font-weight:500}
+
+.m3 .hero{padding:80px 0 120px;text-align:center;position:relative}
+.m3 .hero::before{content:"";position:absolute;top:30%;left:50%;transform:translateX(-50%);width:80%;max-width:900px;aspect-ratio:1;background:radial-gradient(circle,rgba(74,107,93,.12),transparent 60%);z-index:0}
+.m3 .hero .wrap{position:relative}
+.m3 .hero .tag{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.6);border:1px solid rgba(0,0,0,.06);padding:8px 16px;border-radius:100px;font-size:13px;color:#4a6b5d;font-weight:500;margin-bottom:36px}
+.m3 .hero .tag .leaf{font-size:14px}
+.m3 .hero h1{font-size:clamp(48px,7.5vw,96px);font-weight:500;line-height:1;letter-spacing:-.04em;max-width:14ch;margin:0 auto}
+.m3 .hero h1 em{font-family:'Instrument Serif',serif;font-style:italic;color:#4a6b5d;font-weight:400}
+.m3 .hero p.lead{font-size:19px;color:#555;max-width:46ch;margin:32px auto 0;line-height:1.55}
+.m3 .hero .cta{display:inline-flex;gap:14px;margin-top:44px;flex-wrap:wrap;justify-content:center}
+.m3 .hero .btn{padding:18px 30px;border-radius:100px;font-size:15px;font-weight:500;display:inline-flex;align-items:center;gap:10px;transition:all .25s}
+.m3 .hero .btn-1{background:#1a1a1a;color:#fff;box-shadow:0 12px 30px -8px rgba(0,0,0,.3)}
+.m3 .hero .btn-2{background:rgba(255,255,255,.7);color:#1a1a1a;border:1px solid rgba(0,0,0,.08)}
+.m3 .hero .btn:hover{transform:translateY(-2px)}
+.m3 .hero .proof{display:flex;justify-content:center;gap:8px;margin-top:60px;font-size:13.5px;color:#666;align-items:center;flex-wrap:wrap}
+.m3 .hero .proof .stars{color:#c89a3b;letter-spacing:2px}
+
+.m3 .sec{padding:90px 0}
+.m3 .sec-head{text-align:center;margin-bottom:60px}
+.m3 .sec-head .kicker{font-size:12.5px;color:#4a6b5d;letter-spacing:.16em;text-transform:uppercase;font-weight:600;margin-bottom:18px}
+.m3 .sec-head h2{font-size:clamp(34px,4.5vw,54px);font-weight:500;letter-spacing:-.03em;line-height:1.05}
+.m3 .sec-head h2 em{font-family:'Instrument Serif',serif;font-style:italic;color:#4a6b5d;font-weight:400}
+.m3 .sec-head p{font-size:16.5px;color:#666;margin:20px auto 0;max-width:50ch}
+
+.m3 .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.m3 .card{background:#fff;border-radius:20px;padding:28px;transition:all .3s;cursor:pointer;border:1px solid rgba(0,0,0,.04)}
+.m3 .card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -12px rgba(0,0,0,.12)}
+.m3 .card .icon{width:46px;height:46px;background:#f4eee4;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#4a6b5d;margin-bottom:22px}
+.m3 .card h3{font-size:17px;font-weight:600;letter-spacing:-.01em;margin-bottom:8px}
+.m3 .card p{font-size:13.5px;line-height:1.5;color:#666}
+
+.m3 .testimonial-card{background:#fff;border-radius:24px;padding:60px;text-align:center;max-width:780px;margin:0 auto;border:1px solid rgba(0,0,0,.04)}
+.m3 .testimonial-card .stars{color:#c89a3b;font-size:16px;letter-spacing:3px;margin-bottom:30px}
+.m3 .testimonial-card blockquote{font-family:'Instrument Serif',serif;font-size:clamp(24px,3.2vw,36px);line-height:1.3;font-weight:400;letter-spacing:-.01em;margin-bottom:32px}
+.m3 .testimonial-card cite{font-style:normal;font-size:14px;color:#666;display:flex;align-items:center;justify-content:center;gap:12px}
+.m3 .testimonial-card .av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#4a6b5d,#6d9082);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:13px}
+
+.m3 .cta-card{background:#1a1a1a;color:#fff;border-radius:32px;padding:80px 50px;text-align:center;margin:80px auto 60px}
+.m3 .cta-card h2{font-size:clamp(34px,5vw,56px);font-weight:500;letter-spacing:-.03em;line-height:1.05;max-width:20ch;margin:0 auto 20px}
+.m3 .cta-card h2 em{font-family:'Instrument Serif',serif;font-style:italic;color:#a8c0b4;font-weight:400}
+.m3 .cta-card p{color:#a8a8a8;max-width:46ch;margin:0 auto 32px;font-size:16px}
+.m3 .cta-card .btn{display:inline-flex;align-items:center;gap:12px;background:#fff;color:#1a1a1a;padding:18px 32px;border-radius:100px;font-weight:500;font-size:15px;transition:transform .2s}
+.m3 .cta-card .btn:hover{transform:translateY(-2px)}
+
+.m3 footer{padding:50px 0;text-align:center;font-size:13px;color:#888}
+@media(max-width:900px){
+  .m3 .wrap{padding:0 20px}
+  .m3 .nav ul,.m3 .nav .btn{display:none}
+  .m3 .nav .pill{padding:8px 20px}
+  .m3 .hero{padding:40px 0 70px}
+  .m3 .svc-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .m3 .card{padding:22px}
+  .m3 .testimonial-card,.m3 .cta-card{padding:40px 26px;border-radius:24px}
+  .m3 .sec{padding:60px 0}
+  .m3 footer{padding-bottom:100px}
+}
+@media(max-width:480px){
+  .m3 .svc-grid{grid-template-columns:1fr}
+  .m3 .hero h1{font-size:clamp(40px,11vw,56px)}
+}
+
+/* ============================================================
+   ============== MOCKUP 04 - STUDIO (BENTO) ==================
+   ============================================================ */
+.m4{background:#fafafa;color:#0a0a0a;font-family:'Inter',sans-serif}
+.m4 .wrap{max-width:1340px;margin:0 auto;padding:0 24px}
+.m4 .nav{position:sticky;top:0;background:rgba(250,250,250,.8);backdrop-filter:blur(14px);z-index:10;border-bottom:1px solid rgba(0,0,0,.05)}
+.m4 .nav .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
+.m4 .nav .brand{font-weight:700;font-size:15px;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+.m4 .nav .brand::before{content:"";width:22px;height:22px;background:#0a0a0a;border-radius:6px;display:inline-block}
+.m4 .nav ul{list-style:none;display:flex;gap:8px;font-size:13.5px;font-weight:500}
+.m4 .nav ul a{padding:8px 14px;border-radius:8px;color:#555;transition:.2s}
+.m4 .nav ul a:hover{background:rgba(0,0,0,.05);color:#0a0a0a}
+.m4 .nav .btn{background:#0a0a0a;color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:500;display:inline-flex;align-items:center;gap:8px}
+
+.m4 .hero{padding:80px 0 30px}
+.m4 .hero .label{font-size:12px;font-family:'JetBrains Mono',monospace;color:#888;letter-spacing:.08em;margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.m4 .hero .label::before{content:"";width:6px;height:6px;background:#22c55e;border-radius:50%;box-shadow:0 0 0 4px rgba(34,197,94,.2)}
+.m4 .hero h1{font-size:clamp(46px,7vw,104px);font-weight:600;line-height:.95;letter-spacing:-.045em;max-width:18ch}
+.m4 .hero h1 .grad{background:linear-gradient(120deg,#0a0a0a 30%,#3b82f6 60%,#0a0a0a);background-clip:text;-webkit-background-clip:text;color:transparent}
+.m4 .hero .sub{display:flex;justify-content:space-between;margin-top:48px;flex-wrap:wrap;gap:30px;align-items:flex-end}
+.m4 .hero p.lead{font-size:17px;color:#555;max-width:42ch;line-height:1.55}
+.m4 .hero .btn-row{display:flex;gap:10px}
+.m4 .hero .btn{padding:14px 22px;border-radius:10px;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:8px;transition:.2s}
+.m4 .hero .btn-1{background:#0a0a0a;color:#fff}
+.m4 .hero .btn-1:hover{background:#1f1f1f}
+.m4 .hero .btn-2{background:#fff;color:#0a0a0a;border:1px solid rgba(0,0,0,.08)}
+
+.m4 .bento{padding:50px 0;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px}
+.m4 .bnt{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:18px;padding:24px;position:relative;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+.m4 .bnt:hover{border-color:rgba(0,0,0,.15);transform:translateY(-2px)}
+.m4 .bnt .l{font-size:11px;font-family:'JetBrains Mono',monospace;color:#888;letter-spacing:.08em;text-transform:uppercase;margin-bottom:auto}
+.m4 .bnt h3{font-size:18px;font-weight:600;letter-spacing:-.01em;margin-bottom:6px}
+.m4 .bnt p{font-size:13px;color:#666;line-height:1.5}
+/* spans */
+.m4 .bnt.span-2{grid-column:span 2}
+.m4 .bnt.row-2{grid-row:span 2}
+.m4 .bnt.feat{background:#0a0a0a;color:#fff;grid-column:span 2;grid-row:span 2;justify-content:space-between}
+.m4 .bnt.feat .l{color:#888}
+.m4 .bnt.feat h3{font-size:34px;font-weight:600;letter-spacing:-.02em;line-height:1.05;margin-bottom:0}
+.m4 .bnt.feat h3 .blue{color:#3b82f6}
+.m4 .bnt.feat p{font-size:14px;color:#a0a0a0;margin-top:14px;max-width:30ch}
+.m4 .bnt.feat::after{content:"";position:absolute;bottom:-60px;right:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(59,130,246,.4),transparent 70%);border-radius:50%}
+.m4 .bnt.stat .big{font-size:54px;font-weight:600;letter-spacing:-.03em;line-height:1;margin-top:auto}
+.m4 .bnt.stat .big .accent{color:#3b82f6}
+.m4 .bnt.cta{background:linear-gradient(135deg,#3b82f6,#1e40af);color:#fff;justify-content:space-between}
+.m4 .bnt.cta .l{color:rgba(255,255,255,.7)}
+.m4 .bnt.cta h3{font-size:22px;line-height:1.15}
+.m4 .bnt.cta .arr{margin-top:14px;display:inline-flex;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.18);align-items:center;justify-content:center}
+.m4 .bnt.test{background:#f4f4f0;justify-content:space-between}
+.m4 .bnt.test .stars{color:#f5b942;letter-spacing:2px;font-size:14px}
+.m4 .bnt.test p{font-style:italic;font-size:14.5px;color:#2a2a2a;margin:12px 0}
+.m4 .bnt.test cite{font-style:normal;font-size:12px;color:#666;font-weight:500}
+
+.m4 .services-section{padding:80px 0 60px}
+.m4 .services-section .head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;flex-wrap:wrap;gap:20px}
+.m4 .services-section h2{font-size:clamp(30px,4vw,48px);font-weight:600;letter-spacing:-.03em;line-height:1.05;max-width:18ch}
+.m4 .services-section .head p{font-size:14.5px;color:#666;max-width:34ch}
+.m4 .svc-rows{border-top:1px solid rgba(0,0,0,.08)}
+.m4 .svc-row{display:grid;grid-template-columns:60px 1fr 2fr 40px;gap:30px;padding:24px 8px;border-bottom:1px solid rgba(0,0,0,.08);align-items:center;cursor:pointer;transition:.2s}
+.m4 .svc-row:hover{padding-left:20px;background:rgba(0,0,0,.02)}
+.m4 .svc-row .n{font-family:'JetBrains Mono',monospace;font-size:12px;color:#888}
+.m4 .svc-row .nm{font-size:19px;font-weight:600;letter-spacing:-.01em}
+.m4 .svc-row .d{font-size:14px;color:#666;line-height:1.5}
+.m4 .svc-row .arr{text-align:right;font-size:18px;color:#aaa}
+.m4 .svc-row:hover .arr{color:#3b82f6}
+
+.m4 .cta-final{padding:80px 24px 100px;text-align:center}
+.m4 .cta-final h2{font-size:clamp(36px,6vw,80px);font-weight:600;letter-spacing:-.04em;line-height:1;margin:0 auto 28px;max-width:18ch}
+.m4 .cta-final h2 .grad{background:linear-gradient(120deg,#0a0a0a 40%,#3b82f6);background-clip:text;-webkit-background-clip:text;color:transparent}
+.m4 .cta-final p{font-size:16.5px;color:#666;max-width:48ch;margin:0 auto 32px}
+.m4 .cta-final .btn{display:inline-flex;align-items:center;gap:10px;background:#0a0a0a;color:#fff;padding:18px 32px;border-radius:12px;font-weight:500;font-size:15px}
+
+.m4 footer{padding:30px 24px;border-top:1px solid rgba(0,0,0,.06);display:flex;justify-content:space-between;font-size:13px;color:#888;font-family:'JetBrains Mono',monospace;letter-spacing:.04em;flex-wrap:wrap;gap:10px;max-width:1340px;margin:0 auto}
+
+@media(max-width:900px){
+  .m4 .nav ul{display:none}
+  .m4 .nav .btn{padding:12px 18px}
+  .m4 .hero{padding:50px 0 20px}
+  .m4 .hero .sub{flex-direction:column;align-items:flex-start}
+  .m4 .bento{grid-template-columns:1fr 1fr;grid-auto-rows:170px}
+  .m4 .bnt.feat,.m4 .bnt.span-2{grid-column:span 2}
+  .m4 .bnt.row-2{grid-row:span 1}
+  .m4 .svc-row{grid-template-columns:40px 1fr 24px;gap:14px}
+  .m4 .svc-row .d{display:none}
+  .m4 .services-section,.m4 .cta-final{padding:60px 0}
+  .m4 footer{padding-bottom:100px}
+}
+@media(max-width:580px){
+  .m4 .bento{grid-template-columns:1fr}
+  .m4 .bnt,.m4 .bnt.feat,.m4 .bnt.span-2{grid-column:span 1}
+  .m4 .hero h1{font-size:clamp(40px,11vw,60px)}
+}
+</style>
 </head>
 <body>
 
-
-<!-- ============ SVG defs : plaster texture + logo ============ -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <filter id="plaster"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
-</svg>
-
-<!-- ============ TOP STRIP ============ -->
-<div class="topstrip">
-  <div class="wrap">
-    <span class="hideS">Gipsergeschäft · Maler · Schlieren ZH</span>
-    <span><a href="tel:+41763838500">+41 76 383 85 00</a><span class="sep">·</span><span class="hideS">Mo–Fr 7:00–19:00</span></span>
-  </div>
+<!-- ============================================================
+     SWITCHER
+     ============================================================ -->
+<div class="switcher" role="tablist" aria-label="Design directions">
+  <span class="label">DESIGN DIRECTION</span>
+  <button class="on" data-m="1" onclick="show(1)"><span class="n">01</span><span>Editorial</span></button>
+  <button data-m="2" onclick="show(2)"><span class="n">02</span><span>Bold Trade</span></button>
+  <button data-m="3" onclick="show(3)"><span class="n">03</span><span>Boutique</span></button>
+  <button data-m="4" onclick="show(4)"><span class="n">04</span><span>Studio</span></button>
 </div>
 
-<!-- ============ HEADER ============ -->
-<header>
-  <div class="wrap nav">
-    <a href="#" class="brand" onclick="go('home');return false;" aria-label="Romeo + Sohn GmbH">
-      <!-- Recreated logo in brand blue -->
-      <svg class="logo-svg" viewBox="0 0 388 150" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" stroke="#9aa3ad" stroke-width="3" stroke-linecap="round">
-          <path d="M195 20 q40 6 70 30"/><path d="M188 30 q42 6 74 32"/>
-          <path d="M181 40 q44 7 78 34"/>
-        </g>
-        <g transform="rotate(-32 250 45)">
-          <rect x="232" y="20" width="40" height="52" rx="3" fill="#0b5fb0"/>
-          <rect x="237" y="25" width="30" height="42" rx="2" fill="#cfe0f3"/>
-        </g>
-        <text x="0" y="108" font-family="Archivo, sans-serif" font-weight="700" font-size="50" fill="#15181d" letter-spacing="-1">ROME<tspan fill="#0b5fb0">O</tspan> + SOHN</text>
-        <text x="208" y="140" font-family="Archivo, sans-serif" font-weight="700" font-size="26" fill="#0b5fb0">GmbH</text>
-      </svg>
-    </a>
-    <nav>
-      <ul id="menu">
-        <li><a class="navlink active" data-nav="home" href="#" onclick="go('home');return false;">Home</a></li>
-        <li><a class="navlink" data-nav="about" href="#" onclick="go('about');return false;">Über Uns</a></li>
-        <li><a class="navlink" data-nav="services" href="#" onclick="go('services');return false;">Dienstleistungen</a></li>
-        <li><a class="navlink" data-nav="gallery" href="#" onclick="go('gallery');return false;">Galerie</a></li>
-        <li><a class="navlink" data-nav="contact" href="#" onclick="go('contact');return false;">Kontakt</a></li>
-        <li class="mob-cta" style="display:none"><a class="btn btn-primary" href="#" onclick="go('contact');return false;">Offerte anfragen <span class="arr">→</span></a></li>
-      </ul>
+<!-- ============================================================
+     MOCKUP 01 - EDITORIAL
+     ============================================================ -->
+<section class="mockup m1 active" id="mockup-1">
+  <div class="wrap">
+    <nav class="nav">
+      <div class="brand"><span class="dot"></span>Romeo + Sohn GmbH</div>
+      <ul><li><a href="#">Über Uns</a></li><li><a href="#">Dienstleistungen</a></li><li><a href="#">Galerie</a></li><li><a href="#">Kontakt</a></li></ul>
+      <div class="meta">SCHLIEREN · ZH</div>
     </nav>
-    <div class="navcta">
-      <a class="btn btn-primary" href="#" onclick="go('contact');return false;">Offerte anfragen <span class="arr">→</span></a>
-      <button class="burger" aria-label="Menü öffnen" aria-expanded="false" onclick="toggleMenu()"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-</header>
 
-<!-- ============================================================= -->
-<!-- HOME -->
-<!-- ============================================================= -->
-<main id="home" class="page active">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="micro">Gipsergeschäft seit Generationen</div>
+          <h1>Qualität,<br>Sauberkeit<br>und <em>Effizienz.</em></h1>
+        </div>
+        <aside class="hero-aside">
+          <p>Wir sind ein junges, motiviertes Team mit Freude am Handwerk und Liebe zur Farbe. Seit Neustem auch ein Lehrbetrieb.</p>
+          <a class="link" href="#">Kostenlose Offerte anfragen →</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec-head">
+        <div class="label">- Dienstleistungen</div>
+        <h2>Ihr Experte für das ganze Gewerk in Schlieren.</h2>
+      </div>
+      <div class="services-list">
+        <div class="col-l">7 Fachbereiche</div>
+        <div>
+          <div class="svc-item"><span class="num">01</span><span class="name">Neu- und Umbauten</span><span class="desc">Spezialisten für Neubauten und Sanierungen. Stabiler Unterbau für Langlebigkeit.</span></div>
+          <div class="svc-item"><span class="num">02</span><span class="name">Verputz</span><span class="desc">Aus einem kahlen Rohbau ein wohliges Umfeld mit gesundem Raumklima.</span></div>
+          <div class="svc-item"><span class="num">03</span><span class="name">Renovationen</span><span class="desc">Alle Gewerke unter einem Dach, koordiniert und termingerecht.</span></div>
+          <div class="svc-item"><span class="num">04</span><span class="name">Fassaden</span><span class="desc">Königsdisziplin der Wärmedämmung, abgestimmt auf bauliche Gegebenheiten.</span></div>
+          <div class="svc-item"><span class="num">05</span><span class="name">Leichtbau</span><span class="desc">Individuelle Innenarchitekturkonzepte im Trockenbau.</span></div>
+          <div class="svc-item"><span class="num">06</span><span class="name">Brandschutz VKF</span><span class="desc">Fachgerechte Brandschutzlösungen nach VKF-Vorgaben.</span></div>
+          <div class="svc-item"><span class="num">07</span><span class="name">Malerei</span><span class="desc">Präzise Malerarbeiten innen und aussen, mit Auge fürs Detail.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="quote">
+        <div class="label">- Referenz</div>
+        <div>
+          <blockquote>Die Arbeit wurde jederzeit sehr zuverlässig und sauber erledigt. Wir kommen für alle Gipser- oder Malerarbeiten wieder auf euch zurück."</blockquote>
+          <cite>PIETER H. · PHYSIOWELT · 5/5</cite>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-foot">
+      <h3>Sprechen wir über <em>Ihr Projekt.</em></h3>
+      <a class="btn" href="#">Kostenlose Offerte anfragen →</a>
+    </section>
+
+    <footer>
+      <span>© 2026 ROMEO + SOHN GMBH</span>
+      <span>SCHULSTRASSE 34 · 8952 SCHLIEREN</span>
+      <span>+41 76 383 85 00</span>
+    </footer>
+  </div>
+</section>
+
+<!-- ============================================================
+     MOCKUP 02 - BOLD TRADE
+     ============================================================ -->
+<section class="mockup m2" id="mockup-2">
+  <nav class="nav">
+    <div class="wrap">
+      <div class="brand">Romeo<span>+</span>Sohn</div>
+      <ul><li><a href="#">Über Uns</a></li><li><a href="#">Dienstleistungen</a></li><li><a href="#">Galerie</a></li><li><a href="#">Kontakt</a></li></ul>
+      <a href="#" class="btn-call">+41 76 383 85 00 →</a>
+    </div>
+  </nav>
 
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="eyebrow" data-reveal>Gipsergeschäft seit Generationen</span>
-        <h1 class="display" data-reveal style="margin-top:24px">Qualität,<br>Sauberkeit<br>und <em>Effizienz.</em></h1>
-        <p class="lead" data-reveal>Wir sind ein junges, motiviertes Team mit Freude am Handwerk und Liebe zur Farbe – seit Neustem auch ein Lehrbetrieb.</p>
-        <div class="hero-cta" data-reveal>
-          <a class="btn btn-primary" href="#" onclick="go('contact');return false;">Kostenlose Offerte <span class="arr">→</span></a>
-          <a class="btn btn-ghost" href="#" onclick="go('services');return false;">Dienstleistungen</a>
-        </div>
-        <div class="hero-meta" data-reveal>
-          <div class="m"><b>5.0</b><span>Kundenbewertung</span></div>
-          <div class="m"><b>7</b><span>Fachbereiche</span></div>
-          <div class="m"><b>VKF</b><span>Brandschutz spez.</span></div>
-        </div>
-      </div>
-      <div class="hero-panel" data-reveal>
-        <svg class="plaster-tex" width="100%" height="100%"><rect width="100%" height="100%" filter="url(#plaster)"/></svg>
-        <div class="stamp">
-          <div class="top">
-            <div>
-              <div style="font-family:var(--serif);font-size:13px;letter-spacing:.04em;color:var(--ink-soft)">Schulstrasse 34 · 8952 Schlieren</div>
-            </div>
-            <div class="seal">EST.<br>ZÜRICH</div>
-          </div>
-          <div>
-            <h3 style="font-family:var(--serif);color:var(--ink)">Kalkputz · Lehmputz<br>Naturbaustoffe</h3>
-            <div class="swatches">
-              <span class="sw" style="background:#e9e2d2"></span>
-              <span class="sw" style="background:#cdbfa4"></span>
-              <span class="sw" style="background:#a8916f"></span>
-              <span class="sw" style="background:#0b5fb0"></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About strip -->
-  <section class="about sec">
-    <div class="wrap about-grid">
-      <div data-reveal>
-        <span class="eyebrow">Über uns</span>
-        <h2 style="font-size:clamp(30px,4vw,46px);margin-top:18px">Für uns stehen Ihre Bedürfnisse an erster Stelle.</h2>
-        <p>Gerne nehmen wir uns Zeit für eine persönliche Beratung, um Ihre Wünsche und Vorstellungen genau umzusetzen. Kunden schätzen unsere Handwerksdienstleistungen, weil wir sauber und zuverlässig arbeiten.</p>
-        <a class="btn btn-ghost" style="margin-top:30px" href="#" onclick="go('about');return false;">Mehr über das Team</a>
-      </div>
-      <div class="feature-list" data-reveal>
-        <div class="row"><span class="no">01</span><span class="tx"><b>Junges Lehrbetrieb-Team</b><span>Freude am Handwerk und Liebe zur Farbe.</span></span></div>
-        <div class="row"><span class="no">02</span><span class="tx"><b>Sauber & zuverlässig</b><span>Termine eingehalten, Baustelle sauber übergeben.</span></span></div>
-        <div class="row"><span class="no">03</span><span class="tx"><b>Kurze Anfahrtswege</b><span>Pünktlichkeit und Kostenersparnis durch minimale Fahrzeiten.</span></span></div>
-        <div class="row"><span class="no">04</span><span class="tx"><b>Umweltbewusst</b><span>Wo immer möglich umweltschonende Produkte.</span></span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Natural materials -->
-  <section class="sec" style="padding-top:0">
-    <div class="wrap material">
-      <div class="swatchcol" data-reveal>
-        <div class="band"><b>Kalkputz</b><span class="dot" style="background:#e3dcc9"></span></div>
-        <div class="band"><b>Lehmputz</b><span class="dot" style="background:#bda283"></span></div>
-        <div class="band"><b>Naturbaustoffe</b><span class="dot" style="background:#8c7355"></span></div>
-      </div>
-      <div class="card" data-reveal>
-        <span class="tag">Kalkputz · Lehmputz</span>
-        <h2>Naturbaustoffe</h2>
-        <p>Die ausgleichende Funktion von Kalkputz und Lehmputz sorgt nachweislich für ein gesundes Wohnklima. Natürlich bauen ist nachhaltig und wirtschaftlich – über Generationen.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section class="sec" style="background:var(--paper-2);border-top:1px solid var(--line)">
     <div class="wrap">
-      <div class="sec-head" data-reveal>
+      <span class="badge"><span class="pulse"></span>Schlieren ZH · Lehrbetrieb · VKF zertifiziert</span>
+      <h1>Sauber. Pünktlich. <span class="accent">Fachgerecht.</span></h1>
+      <p class="lead">Das Gipsergeschäft Romeo + Sohn GmbH ist Ihr Experte für Verputz, Renovation, Fassaden und Brandschutz im Raum Zürich.</p>
+      <div class="cta">
+        <a class="btn btn-1" href="#">Kostenlose Offerte <span>→</span></a>
+        <a class="btn btn-2" href="#">Dienstleistungen ansehen</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>5.0</b><span>Kundenbewertung</span></div>
+        <div class="stat"><b>7</b><span>Fachbereiche</span></div>
+        <div class="stat"><b>VKF</b><span>Brandschutz spez.</span></div>
+        <div class="stat"><b>ZH</b><span>Region Zürich</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="wrap">
+      <div class="sec-head">
         <div>
-          <span class="eyebrow">Dienstleistungen</span>
-          <h2 style="margin-top:16px">Ihr Experte für<br>das ganze Gewerk.</h2>
+          <div class="kicker">Was wir tun</div>
+          <h2>Alle Gewerke<br>unter einem Dach.</h2>
         </div>
-        <p>Das Gipsergeschäft Romeo + Sohn GmbH in Schlieren ist Ihr Experte für folgende Dienstleistungen.</p>
+        <p>Von Verputz und Fassadendämmung bis Brandschutz: Wir koordinieren, planen und führen aus.</p>
       </div>
-      <div class="services-grid" data-reveal id="svc-home"></div>
+      <div class="svc-grid">
+        <div class="card"><div class="icon">▲</div><h3>Neu- und Umbauten</h3><p>Stabiler Unterbau für Langlebigkeit und Schutz vor Witterung.</p><span class="arr">→</span></div>
+        <div class="card"><div class="icon">◆</div><h3>Verputz</h3><p>Gesundes Raumklima, bessere Energieeffizienz.</p><span class="arr">→</span></div>
+        <div class="card"><div class="icon">●</div><h3>Renovationen</h3><p>Alle Gewerke koordiniert, Termine eingehalten.</p><span class="arr">→</span></div>
+        <div class="card"><div class="icon">■</div><h3>Fassaden</h3><p>Königsdisziplin der Wärmedämmung.</p><span class="arr">→</span></div>
+        <div class="card"><div class="icon">▼</div><h3>Leichtbau</h3><p>Individuelle Trockenbau-Konzepte und Decken.</p><span class="arr">→</span></div>
+        <div class="card"><div class="icon">▣</div><h3>Brandschutz VKF</h3><p>Fachgerechte Lösungen nach VKF-Vorgaben.</p><span class="arr">→</span></div>
+      </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="testi sec">
+  <section class="trust">
     <div class="wrap">
-      <div class="sec-head" data-reveal>
-        <div><span class="eyebrow" style="color:var(--accent)">Referenzen</span><h2 style="margin-top:16px">Was unsere Kunden<br>über uns sagen.</h2></div>
-        <p>Echte Rückmeldungen von Auftraggebern aus der Region Zürich.</p>
+      <div class="sec-head">
+        <div><div class="kicker">Kundenstimmen</div><h2>5.0 / 5 auf<br>Google Reviews.</h2></div>
       </div>
-      <div class="testi-grid">
-        <div class="quote" data-reveal>
+      <div class="trust-grid">
+        <div class="testimonial">
           <div class="stars">★★★★★</div>
-          <p>„Die Arbeit wurde jederzeit sehr zuverlässig und sauber erledigt. Wir kommen für alle Gipser- oder Malerarbeiten wieder auf euch zurück.“</p>
-          <div class="who"><b>Pieter H.</b>PhysioWelt · 5 / 5</div>
+          <p>"Die Arbeit wurde jederzeit sehr zuverlässig und sauber erledigt. Wir kommen für alle Gipser- oder Malerarbeiten wieder auf euch zurück."</p>
+          <div class="who"><div class="av">P</div><div><b>Pieter H.</b><span>PhysioWelt</span></div></div>
         </div>
-        <div class="quote" data-reveal>
+        <div class="testimonial">
           <div class="stars">★★★★★</div>
-          <p>„Super Beratung, Firma Romeo + Sohn GmbH nur zum Empfehlen. Sehr saubere und fachgerechte Arbeit, gerne wieder.“</p>
-          <div class="who"><b>Meki Z.</b>Privatkunde · 5 / 5</div>
+          <p>"Super Beratung, Firma Romeo + Sohn GmbH nur zum Empfehlen. Sehr saubere und fachgerechte Arbeit, gerne wieder."</p>
+          <div class="who"><div class="av">M</div><div><b>Meki Z.</b><span>Privatkunde</span></div></div>
         </div>
-        <div class="quote" data-reveal>
+        <div class="testimonial">
           <div class="stars">★★★★★</div>
-          <p>„Beste Firma! Die Arbeiten werden sehr effizient und sauber erledigt. Kann ich nur weiter empfehlen!“</p>
-          <div class="who"><b>Granit T.</b>Privatkunde · 5 / 5</div>
+          <p>"Beste Firma! Die Arbeiten werden sehr effizient und sauber erledigt. Kann ich nur weiter empfehlen!"</p>
+          <div class="who"><div class="av">G</div><div><b>Granit T.</b><span>Privatkunde</span></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA band -->
-  <section class="ctaband">
-    <div class="wrap" data-reveal>
-      <h2>Bereit für ein gesundes, sauberes Zuhause?</h2>
-      <p>Sichern Sie sich jetzt Ihre kostenlose und unverbindliche Offerte. Wir melden uns innert 24 Stunden.</p>
-      <a class="btn btn-primary" href="#" onclick="go('contact');return false;">Offerte anfragen <span class="arr">→</span></a>
-    </div>
-  </section>
-</main>
-
-<!-- ============================================================= -->
-<!-- ABOUT -->
-<!-- ============================================================= -->
-<main id="about" class="page">
-  <section class="pagehead">
+  <section class="cta-band">
     <div class="wrap">
-      <div class="crumbs"><a href="#" onclick="go('home');return false;">Home</a> &nbsp;/&nbsp; Über Uns</div>
-      <h1>Über Uns</h1>
+      <h2>Bereit für Ihr Projekt?</h2>
+      <p>Kostenlose, unverbindliche Offerte. Wir melden uns innert 24 Stunden.</p>
+      <a class="btn" href="#">Jetzt anfragen <span>→</span></a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Romeo + Sohn GmbH · Schulstrasse 34 · 8952 Schlieren</span>
+      <a href="mailto:info@romeosohn.ch">info@romeosohn.ch</a>
+    </div>
+  </footer>
+</section>
+
+<!-- ============================================================
+     MOCKUP 03 - BOUTIQUE
+     ============================================================ -->
+<section class="mockup m3" id="mockup-3">
+  <nav class="nav">
+    <div class="pill">
+      <div class="brand"><span class="sq"></span>Romeo + Sohn</div>
+      <ul><li><a href="#">Über</a></li><li><a href="#">Leistungen</a></li><li><a href="#">Galerie</a></li><li><a href="#">Kontakt</a></li></ul>
+      <a class="btn" href="#">Offerte</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="tag"><span class="leaf">✦</span>Gipsergeschäft mit Naturbaustoffen</span>
+      <h1>Wo Handwerk <em>Heimat</em> wird.</h1>
+      <p class="lead">Sauber, persönlich und mit Liebe zur Farbe: Wir verwandeln Ihre Räume in ein wohliges Zuhause. Aus Schlieren, für die Region Zürich.</p>
+      <div class="cta">
+        <a class="btn btn-1" href="#">Kostenlose Offerte →</a>
+        <a class="btn btn-2" href="#">Unsere Arbeit ansehen</a>
+      </div>
+      <div class="proof">
+        <span class="stars">★★★★★</span>
+        <span>5.0 / 5 · "Sehr saubere und fachgerechte Arbeit, gerne wieder."</span>
+      </div>
     </div>
   </section>
 
   <section class="sec">
     <div class="wrap">
-      <div style="max-width:60ch" data-reveal>
-        <span class="eyebrow">Das Versprechen</span>
-        <h2 style="font-size:clamp(28px,4vw,44px);margin-top:18px">Ehrlichkeit, Integrität und Erfahrung.</h2>
+      <div class="sec-head">
+        <div class="kicker">Dienstleistungen</div>
+        <h2>Vom kahlen Rohbau<br>zum <em>gesunden</em> Raum.</h2>
+        <p>Sieben Fachbereiche, ein Team. Wir koordinieren alle Gewerke und übergeben sauber.</p>
       </div>
-
-      <div class="team-grid" style="margin-top:60px">
-        <div data-reveal>
-          <h3 style="font-size:30px">Das Team</h3>
-          <div style="width:40px;height:2px;background:var(--accent);margin:18px 0 24px"></div>
-          <p style="color:var(--ink-soft)">Das Gipsen liegt uns im Blut. Wir wissen, worin wir gut sind und was wir erreichen möchten.</p>
-          <p style="color:var(--ink-soft);margin-top:16px">Kurze Anfahrtswege ergeben für unsere Kunden den Mehrwert von Pünktlichkeit und Kostenersparnis durch minimale Fahrzeiten der Mitarbeiter.</p>
-          <p style="color:var(--ink-soft);margin-top:16px">Kunden schätzen unsere Handwerksdienstleistungen, weil wir sauber und zuverlässig arbeiten. Ausserdem sind wir uns der Verantwortung gegenüber der Umwelt bewusst und verwenden wo immer möglich umweltschonende Produkte.</p>
-        </div>
-        <div class="team-figure" data-reveal>
-          <svg class="plaster-tex" width="100%" height="100%"><rect width="100%" height="100%" filter="url(#plaster)"/></svg>
-          <div class="label">Romeo & Sohn · Schlieren</div>
-        </div>
-      </div>
-
-      <div class="values" data-reveal>
-        <div class="v"><div class="n">①</div><h3>Ehrlichkeit</h3><p>Transparente Beratung und faire Offerten – ohne versteckte Kosten.</p></div>
-        <div class="v"><div class="n">②</div><h3>Integrität</h3><p>Wir halten, was wir versprechen. Termine und Qualität stimmen.</p></div>
-        <div class="v"><div class="n">③</div><h3>Erfahrung</h3><p>Fachgerechte Ausführung über alle Gewerke – aus einer Hand.</p></div>
+      <div class="svc-grid">
+        <div class="card"><div class="icon">⌂</div><h3>Neu- &amp; Umbauten</h3><p>Spezialisten für Neubau und Sanierung.</p></div>
+        <div class="card"><div class="icon">◐</div><h3>Verputz</h3><p>Gesundes Raumklima durch fachgerechten Innenputz.</p></div>
+        <div class="card"><div class="icon">↻</div><h3>Renovationen</h3><p>Alle Gewerke aus einer Hand, koordiniert.</p></div>
+        <div class="card"><div class="icon">▤</div><h3>Fassaden</h3><p>Wärmedämmung als Königsdisziplin.</p></div>
+        <div class="card"><div class="icon">⊟</div><h3>Leichtbau</h3><p>Trockenbau-Konzepte für individuelle Räume.</p></div>
+        <div class="card"><div class="icon">△</div><h3>Brandschutz VKF</h3><p>Fachgerecht nach VKF-Vorgaben.</p></div>
+        <div class="card"><div class="icon">◑</div><h3>Malerei</h3><p>Präzise innen und aussen, mit Liebe zur Farbe.</p></div>
+        <div class="card"><div class="icon">❀</div><h3>Naturbaustoffe</h3><p>Kalk- und Lehmputz für Generationen.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="testi sec">
+  <section class="sec">
     <div class="wrap">
-      <div class="sec-head" data-reveal><div><span class="eyebrow" style="color:var(--accent)">Referenzen</span><h2 style="margin-top:16px">Was unsere Kunden sagen.</h2></div></div>
-      <div class="testi-grid">
-        <div class="quote" data-reveal><div class="stars">★★★★★</div><p>„Mit der Renovation unserer Physio-Praxis haben wir 3 komplett neue Räume erhalten. Sehr zufrieden.“</p><div class="who"><b>Pieter H.</b>PhysioWelt · 5 / 5</div></div>
-        <div class="quote" data-reveal><div class="stars">★★★★★</div><p>„Sehr saubere und fachgerechte Arbeit, gerne wieder.“</p><div class="who"><b>Meki Z.</b>Privatkunde · 5 / 5</div></div>
-        <div class="quote" data-reveal><div class="stars">★★★★★</div><p>„Die Arbeiten werden sehr effizient und sauber erledigt.“</p><div class="who"><b>Granit T.</b>Privatkunde · 5 / 5</div></div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>„Mit der Renovation unserer Physio-Praxis haben wir 3 komplett neue Räume und diverse Malerarbeiten erhalten. Die Arbeit wurde jederzeit sehr zuverlässig und sauber erledigt."</blockquote>
+        <cite><span class="av">P</span><span><b>Pieter H.</b> · PhysioWelt · 5 / 5</span></cite>
       </div>
     </div>
   </section>
-</main>
 
-<!-- ============================================================= -->
-<!-- SERVICES -->
-<!-- ============================================================= -->
-<main id="services" class="page">
-  <section class="pagehead">
-    <div class="wrap">
-      <div class="crumbs"><a href="#" onclick="go('home');return false;">Home</a> &nbsp;/&nbsp; Dienstleistungen</div>
-      <h1>Dienstleistungen</h1>
-    </div>
-  </section>
-
-  <section class="sec" style="padding-top:60px">
-    <div class="wrap">
-      <p style="max-width:60ch;color:var(--ink-soft);font-size:17px;margin-bottom:20px" data-reveal>Das Gipsergeschäft Romeo + Sohn GmbH in Schlieren ist Ihr Experte für folgende Dienstleistungen – fachgerecht ausgeführt und sauber übergeben.</p>
-      <div class="svc-detail" id="svc-detail"></div>
-    </div>
-  </section>
-
-  <section class="ctaband">
-    <div class="wrap" data-reveal>
-      <h2>Welches Gewerk dürfen wir übernehmen?</h2>
-      <p>Beschreiben Sie uns Ihr Projekt – wir erstellen Ihnen eine kostenlose Offerte.</p>
-      <a class="btn btn-primary" href="#" onclick="go('contact');return false;">Jetzt anfragen <span class="arr">→</span></a>
-    </div>
-  </section>
-</main>
-
-<!-- ============================================================= -->
-<!-- GALLERY -->
-<!-- ============================================================= -->
-<main id="gallery" class="page">
-  <section class="pagehead">
-    <div class="wrap">
-      <div class="crumbs"><a href="#" onclick="go('home');return false;">Home</a> &nbsp;/&nbsp; Galerie</div>
-      <h1>Galerie</h1>
-    </div>
-  </section>
-  <section class="sec" style="padding-top:60px">
-    <div class="wrap">
-      <div class="sec-head" data-reveal><div><span class="eyebrow">Highly experienced handymen</span><h2 style="margin-top:14px">Bildergalerie<br>unserer Arbeit.</h2></div><p>Ein Auszug aus realisierten Projekten in Verputz, Renovation, Fassaden und Trockenbau.</p></div>
-      <div class="gallery-grid" id="gallery-grid"></div>
-    </div>
-  </section>
-</main>
-
-<!-- ============================================================= -->
-<!-- CONTACT -->
-<!-- ============================================================= -->
-<main id="contact" class="page">
-  <section class="pagehead">
-    <div class="wrap">
-      <div class="crumbs"><a href="#" onclick="go('home');return false;">Home</a> &nbsp;/&nbsp; Kontakt</div>
-      <h1>Kontakt</h1>
-    </div>
-  </section>
-  <section class="sec" style="padding-top:60px">
-    <div class="wrap contact-grid">
-      <div data-reveal>
-        <span class="eyebrow">Kontakt Info</span>
-        <h2 style="font-size:30px;margin-top:16px">Sprechen wir<br>über Ihr Projekt.</h2>
-        <div class="info-block"><div class="k">Adresse</div><div class="val">Schulstrasse 34<br>8952 Schlieren</div></div>
-        <div class="info-block"><div class="k">Telefon</div><div class="val"><a href="tel:+41763838500">+41 76 383 85 00</a></div></div>
-        <div class="info-block"><div class="k">E-Mail</div><div class="val"><a href="mailto:info@romeosohn.ch">info@romeosohn.ch</a></div></div>
-        <div class="info-block"><div class="k">Öffnungszeiten</div><div class="val" style="font-size:16px;line-height:1.7">Mo – Fr: 7:00 – 19:00<br>Sa: 7:00 – 12:00</div></div>
-      </div>
-      <div data-reveal>
-        <div style="border:1px solid var(--line);background:var(--white);padding:42px">
-          <h3 style="font-size:26px;margin-bottom:6px">Sichere Dir jetzt deine kostenlose Offerte.</h3>
-          <p style="color:var(--ink-soft);font-size:14.5px;margin-bottom:28px">Wir melden uns innert 24 Stunden.</p>
-          <div class="frow">
-            <div><label>Vorname*</label><input type="text" placeholder="Vorname"></div>
-            <div><label>Nachname*</label><input type="text" placeholder="Nachname"></div>
-          </div>
-          <div class="frow">
-            <div><label>E-Mail Adresse*</label><input type="email" placeholder="name@email.ch"></div>
-            <div><label>Telefon</label><input type="tel" placeholder="+41 …"></div>
-          </div>
-          <div class="fullrow"><label>Adresse</label><input type="text" placeholder="Strasse, PLZ Ort"></div>
-          <div class="fullrow"><label>Ihre Nachricht*</label><textarea placeholder="Beschreiben Sie kurz Ihr Projekt …"></textarea></div>
-          <button class="btn btn-primary" onclick="this.textContent='Danke — wir melden uns!';this.style.background='var(--accent)'">Einreichen <span class="arr">→</span></button>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- ============================================================= -->
-<!-- FOOTER -->
-<!-- ============================================================= -->
-<footer>
   <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <svg class="logo-svg foot-logo" viewBox="0 0 388 150" style="height:54px">
-          <g fill="none" stroke="#5b626c" stroke-width="3" stroke-linecap="round"><path d="M195 20 q40 6 70 30"/><path d="M188 30 q42 6 74 32"/><path d="M181 40 q44 7 78 34"/></g>
-          <g transform="rotate(-32 250 45)"><rect x="232" y="20" width="40" height="52" rx="3" fill="#0b5fb0"/><rect x="237" y="25" width="30" height="42" rx="2" fill="#cfe0f3"/></g>
-          <text x="0" y="108" font-family="Archivo, sans-serif" font-weight="700" font-size="50" fill="#ffffff" letter-spacing="-1">ROME<tspan fill="#3d8de0">O</tspan> + SOHN</text>
-          <text x="208" y="140" font-family="Archivo, sans-serif" font-weight="700" font-size="26" fill="#3d8de0">GmbH</text>
-        </svg>
-        <p>Gerne nehmen wir uns Zeit für eine persönliche Beratung, um deine Wünsche und Vorstellungen genau umzusetzen. Wir sind dein kompetenter und zuverlässiger Maler und Gipser im Raum Zürich.</p>
-      </div>
-      <div>
-        <h4>Navigation</h4>
-        <a class="flink" href="#" onclick="go('home');return false;">Home</a>
-        <a class="flink" href="#" onclick="go('about');return false;">Über Uns</a>
-        <a class="flink" href="#" onclick="go('services');return false;">Dienstleistungen</a>
-        <a class="flink" href="#" onclick="go('gallery');return false;">Galerie</a>
-        <a class="flink" href="#" onclick="go('contact');return false;">Kontakt</a>
-      </div>
-      <div>
-        <h4>Standort</h4>
-        <p>Schulstrasse 34<br>8952 Schlieren</p>
-        <a class="flink" href="tel:+41763838500" style="margin-top:14px">+41 76 383 85 00</a>
-        <a class="flink" href="mailto:info@romeosohn.ch">info@romeosohn.ch</a>
-      </div>
-      <div>
-        <h4>Öffnungszeiten</h4>
-        <p>Mo – Fr: 7:00 – 19:00<br>Sa: 7:00 – 12:00</p>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 Romeo + Sohn GmbH · Alle Rechte vorbehalten</span>
-      <span>Gipsergeschäft · Maler · Schlieren ZH</span>
+    <div class="cta-card">
+      <h2>Schreiben Sie uns. <em>Sprechen wir.</em></h2>
+      <p>Eine persönliche Beratung kostet nichts. Eine Offerte auch nicht.</p>
+      <a class="btn" href="#">Kontakt aufnehmen →</a>
     </div>
   </div>
-</footer>
-<script src="assets/js/main.js"></script>
+
+  <footer>
+    © 2026 Romeo + Sohn GmbH · Schulstrasse 34, 8952 Schlieren · info@romeosohn.ch
+  </footer>
+</section>
+
+<!-- ============================================================
+     MOCKUP 04 - STUDIO (BENTO)
+     ============================================================ -->
+<section class="mockup m4" id="mockup-4">
+  <nav class="nav">
+    <div class="wrap">
+      <div class="brand">Romeo + Sohn</div>
+      <ul><li><a href="#">Über</a></li><li><a href="#">Leistungen</a></li><li><a href="#">Galerie</a></li><li><a href="#">Kontakt</a></li></ul>
+      <a class="btn" href="#">Offerte anfragen →</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="label">Verfügbar · Region Zürich · Mo–Sa</div>
+      <h1>Das Gipser-<br>geschäft, das <span class="grad">sauber<br>arbeitet.</span></h1>
+      <div class="sub">
+        <p class="lead">Verputz, Renovation, Fassaden, Brandschutz. Sieben Fachbereiche, ein Team in Schlieren ZH.</p>
+        <div class="btn-row">
+          <a class="btn btn-1" href="#">Offerte anfragen →</a>
+          <a class="btn btn-2" href="#">Leistungen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="bento">
+      <div class="bnt feat">
+        <div class="l">- Featured</div>
+        <h3>Naturbaustoffe für ein <span class="blue">gesundes</span> Wohnklima.</h3>
+        <p>Kalk- und Lehmputz, sauber verarbeitet. Nachhaltig über Generationen.</p>
+      </div>
+      <div class="bnt stat">
+        <div class="l">Bewertung</div>
+        <div class="big">5<span class="accent">.0</span></div>
+        <p style="margin-top:6px">Google Reviews</p>
+      </div>
+      <div class="bnt stat">
+        <div class="l">Fachbereiche</div>
+        <div class="big">07</div>
+        <p style="margin-top:6px">Alles aus einer Hand</p>
+      </div>
+      <div class="bnt test">
+        <div class="stars">★★★★★</div>
+        <p>"Die Arbeiten werden sehr effizient und sauber erledigt. Kann ich nur weiter empfehlen!"</p>
+        <cite>Granit T. · Privatkunde</cite>
+      </div>
+      <div class="bnt span-2">
+        <div class="l">- Standort</div>
+        <h3>Schulstrasse 34<br>8952 Schlieren</h3>
+        <p style="margin-top:10px">Mo–Fr 7:00–19:00 · Sa 7:00–12:00<br>+41 76 383 85 00</p>
+      </div>
+      <div class="bnt cta">
+        <div class="l">- Jetzt anfragen</div>
+        <div><h3>Kostenlose<br>Offerte.</h3><span class="arr">→</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-section">
+    <div class="wrap">
+      <div class="head">
+        <h2>Sieben Fachbereiche.<br>Ein Anspruch: <span style="color:#3b82f6">sauber gemacht.</span></h2>
+        <p>Wir koordinieren und führen alle Gewerke aus, damit Sie nicht mit fünf Firmen telefonieren müssen.</p>
+      </div>
+      <div class="svc-rows">
+        <div class="svc-row"><span class="n">01</span><span class="nm">Neu- und Umbauten</span><span class="d">Spezialisten für Neubau und Sanierung, stabiler Unterbau für Langlebigkeit.</span><span class="arr">→</span></div>
+        <div class="svc-row"><span class="n">02</span><span class="nm">Verputz</span><span class="d">Aus dem Rohbau ein wohliges Raumklima, höhere Energieeffizienz.</span><span class="arr">→</span></div>
+        <div class="svc-row"><span class="n">03</span><span class="nm">Renovationen</span><span class="d">Alle Gewerke koordiniert, Termine eingehalten, Nerven gespart.</span><span class="arr">→</span></div>
+        <div class="svc-row"><span class="n">04</span><span class="nm">Fassaden</span><span class="d">Königsdisziplin der Wärmedämmung, abgestimmt auf das Gebäude.</span><span class="arr">→</span></div>
+        <div class="svc-row"><span class="n">05</span><span class="nm">Leichtbau</span><span class="d">Individuelle Trockenbau- und Innenarchitekturkonzepte.</span><span class="arr">→</span></div>
+        <div class="svc-row"><span class="n">06</span><span class="nm">Brandschutz VKF</span><span class="d">Fachgerechte Brandschutzlösungen nach VKF-Vorgaben.</span><span class="arr">→</span></div>
+        <div class="svc-row"><span class="n">07</span><span class="nm">Malerei</span><span class="d">Präzise Malerarbeiten innen und aussen.</span><span class="arr">→</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <h2>Lassen Sie uns Ihr <span class="grad">Projekt</span> besprechen.</h2>
+    <p>Eine kostenlose Offerte, unverbindlich. Wir melden uns innert 24 Stunden.</p>
+    <a class="btn" href="#">Offerte anfragen →</a>
+  </section>
+
+  <footer>
+    <span>© 2026 ROMEO + SOHN GMBH</span>
+    <span>SCHULSTRASSE 34 · 8952 SCHLIEREN</span>
+    <span>+41 76 383 85 00</span>
+  </footer>
+</section>
+
+<script>
+function show(n){
+  document.querySelectorAll('.mockup').forEach(m=>m.classList.remove('active'));
+  document.getElementById('mockup-'+n).classList.add('active');
+  document.querySelectorAll('.switcher button').forEach(b=>b.classList.toggle('on',b.dataset.m==String(n)));
+  window.scrollTo({top:0,behavior:'instant'});
+}
+/* keyboard: 1-4 to switch */
+document.addEventListener('keydown',e=>{
+  if(['1','2','3','4'].includes(e.key))show(e.key);
+});
+</script>
 </body>
 </html>

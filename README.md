@@ -1,42 +1,52 @@
-# Romeo + Sohn GmbH — Website Prototype
+# Romeo + Sohn GmbH — Design Directions
 
-First design prototype for **Romeo + Sohn GmbH**, Gipsergeschäft & Malerei in Schlieren (ZH).
+Four distinct design directions for the **Romeo + Sohn GmbH** website redesign, presented as a single interactive demo for client review.
 
-**Live demo:** _(GitHub Pages link appears here once Pages is enabled — see below)_
+**Live demo:** _(GitHub Pages link appears here once Pages is enabled, see below)_
 
 ---
 
-## About this prototype
+## What's in here
 
-A refined, classic redesign of [romeosohn.ch](https://romeosohn.ch/) with a *"Swiss Craftsman"* direction — restrained, editorial, and intentionally photo-light per the client brief. The brand colour is pulled from the actual logo (blue) with a single quiet brass accent, replacing the previous blue/yellow clash.
+A single HTML file with **4 home-page mockups**, switchable via a pill at the bottom of the screen (or press keys **1 / 2 / 3 / 4**).
 
-It is a single-page application with five views — **Home · Über Uns · Dienstleistungen · Galerie · Kontakt** — and is **100% mobile-friendly**, verified at 320 / 375 / 390 / 768 px.
+| # | Name | Personality |
+|---|---|---|
+| **01** | **Editorial** | Magazine-clean, hairline rules, big italic serif accent. Restrained and design-led. |
+| **02** | **Bold Trade** | Navy hero, amber accent, big bold sans, confident statements. Modern Handwerker energy. |
+| **03** | **Boutique** | Warm cream, sage accent, rounded everything, soft shadows. Premium and approachable. |
+| **04** | **Studio** | Bento grid, gradient text, tight modern type, asymmetric. Contemporary tech feel. |
 
-| | |
-|---|---|
-| **Stack** | Plain HTML, CSS, vanilla JS — no build step, no dependencies |
-| **Fonts** | Fraunces (display) + Archivo (body), via Google Fonts |
-| **Hosting** | Static — runs anywhere (GitHub Pages, Netlify, any web host) |
-| **Status** | First prototype for client review |
+All four use identical German content so only the design differs. Each is **100% mobile-friendly**, verified at 320 / 375 / 390 / 768 px with zero horizontal overflow and no tap targets under 36 px.
+
+---
+
+## How the client should use it
+
+1. Open it on desktop and on a phone.
+2. Switch through all four with the bottom pill.
+3. Ask yourself: "Which one feels closest to how I want my clients to feel when they land here?"
+4. Then: "What's one thing I'd take from a different direction?"
+
+The goal is to narrow down a direction, not to pick a final design. The chosen direction will be expanded into the full 5-page site (Home, Über Uns, Dienstleistungen, Galerie, Kontakt).
 
 ---
 
 ## View it locally
 
-No installation needed. Either:
+No installation needed.
 
 - **Double-click `index.html`** to open it in your browser, **or**
-- Serve it (recommended, avoids font/cache quirks):
+- Serve it (recommended):
 
 ```bash
-# Python 3
 python3 -m http.server 8000
 # then open http://localhost:8000
 ```
 
 ---
 
-## Publish it for free (GitHub Pages)
+## Publish for free (GitHub Pages)
 
 1. Push this repository to GitHub.
 2. Go to **Settings → Pages**.
@@ -45,41 +55,26 @@ python3 -m http.server 8000
 5. After ~1 minute the site is live at:
    `https://<your-username>.github.io/<repo-name>/`
 
-> A custom domain (e.g. `prototype.romeosohn.ch`) can be added under the same Pages settings.
-
 ---
 
 ## Structure
 
 ```
 .
-├── index.html              # All five page-views (single-page app)
-├── assets/
-│   ├── css/styles.css       # All styling + responsive breakpoints
-│   ├── js/main.js           # Routing, mobile menu, scroll reveals
-│   └── img/
-│       ├── logo.png          # Brand logo
-│       └── favicon.png       # Browser tab icon
-├── .nojekyll               # Tells GitHub Pages to serve files as-is
+├── index.html         # All four mockups, switcher, scoped styles per direction
+├── .nojekyll          # Tells GitHub Pages to serve files as-is
 ├── LICENSE
-└── README.md
+├── README.md
+└── .gitignore
 ```
 
----
-
-## Notes for review
-
-- **Text** is kept essentially verbatim from the current site (all German copy, services, testimonials, address, opening hours).
-- **Photo-light by design** — jobsite photos are replaced with textured material panels and per-service line icons. Strong, well-lit project photos can be re-introduced in the Galerie on request.
-- **Open question for the client:** the current site says *Schlieren* in the logo/address but *"Maler und Gipser in Zürich"* in the footer. This prototype uses *"im Raum Zürich"* as a stopgap — please confirm the preferred wording for local SEO.
+Single file by design. Each mockup's styles are scoped under a parent class (`.m1`, `.m2`, `.m3`, `.m4`) so they cannot interfere with each other.
 
 ---
 
-## Next steps (not in this prototype)
+## Next steps
 
-- Wire the contact form to a real endpoint (e.g. form service or webhook).
-- Final photography selection for the gallery.
-- Content review & sign-off.
+Once the client picks a direction, the winning mockup will be expanded into the full responsive 5-page site with working contact form and content management.
 
 ---
 
