@@ -5,11 +5,36 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#B8342E">
 <title>Romeo + Sohn GmbH | Gipsergeschäft Schlieren</title>
-<meta name="description" content="Romeo + Sohn GmbH. Gipsergeschäft in Schlieren. Verputz, Fassaden, Renovationen, Brandschutz VKF. Qualität, Sauberkeit und Effizienz.">
+<meta name="description" content="Romeo + Sohn GmbH – Ihr Gipsergeschäft in Schlieren ZH. Verputz, Fassaden, Renovationen, Leichtbau, Brandschutz VKF und Malerei im Raum Zürich.">
 <meta property="og:title" content="Romeo + Sohn GmbH | Gipsergeschäft Schlieren">
-<meta property="og:description" content="Gipsergeschäft in Schlieren. Qualität, Sauberkeit und Effizienz.">
+<meta property="og:description" content="Ihr Gipsergeschäft in Schlieren ZH. Qualität, Sauberkeit und Effizienz.">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Romeo + Sohn GmbH",
+  "description": "Gipsergeschäft in Schlieren ZH: Verputz, Fassaden, Renovationen, Leichtbau, Brandschutz VKF und Malerei.",
+  "url": "https://romeosohn.ch/",
+  "telephone": "+41763838500",
+  "email": "info@romeosohn.ch",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Schulstrasse 34",
+    "postalCode": "8952",
+    "addressLocality": "Schlieren",
+    "addressRegion": "ZH",
+    "addressCountry": "CH"
+  },
+  "areaServed": "Zürich",
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "19:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:00", "closes": "12:00"}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -20,6 +45,7 @@
   --rs-red-2:#9A2820;
   --rs-red-3:#C84A44;
   --rs-red-soft:#FBE9E7;
+  --rs-red-light:#E2716B; /* red for small text on navy: 5.2:1 */
   --rs-navy:#14213D;
   --rs-navy-2:#1E2D4F;
   --rs-navy-3:#2A3A5E;
@@ -42,8 +68,8 @@
 }
 
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
-body{margin:0;font-family:var(--body);font-size:16px;line-height:1.6;color:var(--rs-text);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 16px);-webkit-text-size-adjust:100%;overflow-x:clip}
+body{margin:0;font-family:var(--body);font-size:16px;line-height:1.6;color:var(--rs-text);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:clip}
 img,svg{display:block;max-width:100%}
 img{height:auto}
 a{color:inherit;text-decoration:none}
@@ -191,11 +217,12 @@ ul{margin:0;padding:0;list-style:none}
   z-index:99;
   padding-top:calc(var(--nav-h) + 32px);
   transform:translateX(100%);
-  transition:transform .35s cubic-bezier(.4,0,.2,1);
+  visibility:hidden;
+  transition:transform .35s cubic-bezier(.4,0,.2,1), visibility 0s linear .35s;
   overflow-y:auto;
   display:flex;flex-direction:column;
 }
-.rs-drawer.open{transform:translateX(0)}
+.rs-drawer.open{transform:translateX(0);visibility:visible;transition:transform .35s cubic-bezier(.4,0,.2,1)}
 .rs-drawer-links{padding:0 32px;margin:0;list-style:none}
 .rs-drawer-links a{
   display:flex;align-items:center;justify-content:space-between;
@@ -206,7 +233,7 @@ ul{margin:0;padding:0;list-style:none}
   min-height:64px;
 }
 .rs-drawer-links a::after{content:'→';color:var(--rs-red);font-size:18px}
-.rs-drawer-cta{padding:32px;margin-top:auto}
+.rs-drawer-cta{padding:32px;margin-top:auto;display:flex;flex-direction:column;gap:12px}
 .rs-drawer-cta .rs-btn{width:100%;justify-content:center}
 
 /* HERO */
@@ -271,7 +298,7 @@ ul{margin:0;padding:0;list-style:none}
 }
 .rs-hero-stats{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(2,minmax(0,260px));
   gap:32px;
   padding:48px 0 64px;
   margin-top:48px;
@@ -389,19 +416,14 @@ ul{margin:0;padding:0;list-style:none}
   overflow:hidden;
   border-radius:var(--r-md);
   background:var(--rs-navy);
-  cursor:pointer;
-  transition:transform .35s;
 }
-.rs-proj-card:hover{transform:scale(.99)}
 .rs-proj-card:nth-child(1){grid-row:span 2}
 .rs-proj-card:nth-child(4){grid-column:span 2}
 .rs-proj-card img{
   width:100%;height:100%;
   object-fit:cover;
   display:block;
-  transition:transform .6s ease;
 }
-.rs-proj-card:hover img{transform:scale(1.04)}
 .rs-proj-card::after{
   content:'';position:absolute;inset:0;
   background:linear-gradient(180deg, transparent 35%, rgba(15,23,42,.85) 100%);
@@ -490,7 +512,7 @@ ul{margin:0;padding:0;list-style:none}
   display:inline-flex;align-items:center;justify-content:center;
   margin-bottom:20px;
 }
-.rs-val h4{
+.rs-val h3{
   font-family:var(--display);
   font-weight:700;font-size:18px;
   letter-spacing:-0.01em;
@@ -504,7 +526,8 @@ ul{margin:0;padding:0;list-style:none}
   color:#fff;
   border-radius:var(--r-md);
   padding:48px 40px;
-  position:relative;
+  position:sticky;
+  top:calc(var(--nav-h) + 24px);
   overflow:hidden;
 }
 .rs-stats-side::before{
@@ -526,7 +549,7 @@ ul{margin:0;padding:0;list-style:none}
   font-family:var(--display);
   font-size:11px;font-weight:600;
   letter-spacing:.22em;text-transform:uppercase;
-  color:var(--rs-red-3);
+  color:var(--rs-red-light);
   margin-bottom:32px;
   position:relative;z-index:1;
   display:flex;align-items:center;gap:12px;
@@ -582,13 +605,13 @@ ul{margin:0;padding:0;list-style:none}
   margin:20px 0 24px;
   text-transform:uppercase;
 }
-.rs-vision-main h2 .accent{color:var(--rs-red-3)}
+.rs-vision-main h2 .accent{color:var(--rs-red-light)}
 .rs-vision-main .eyebrow-white{
   display:inline-flex;align-items:center;gap:14px;
   font-family:var(--display);
   font-size:12px;font-weight:600;
   letter-spacing:.22em;text-transform:uppercase;
-  color:var(--rs-red-3);
+  color:var(--rs-red-light);
 }
 .rs-vision-main .eyebrow-white::before{content:'';width:44px;height:2px;background:var(--rs-red)}
 .rs-vision-main p{
@@ -617,7 +640,7 @@ ul{margin:0;padding:0;list-style:none}
   min-width:54px;
   letter-spacing:-0.02em;
 }
-.rs-vision-feat h5{
+.rs-vision-feat h3{
   font-family:var(--display);
   font-weight:600;font-size:18px;
   color:#fff;margin:0 0 6px;
@@ -711,64 +734,6 @@ ul{margin:0;padding:0;list-style:none}
   display:inline-block;
 }
 
-/* TESTIMONIALS */
-.rs-test-head{text-align:center;margin-bottom:64px;max-width:680px;margin-left:auto;margin-right:auto}
-.rs-test-head .rs-eyebrow{justify-content:center}
-.rs-test-head h2{
-  font-size:clamp(36px,4.5vw,56px);
-  font-weight:700;margin-top:20px;
-  letter-spacing:-0.02em;line-height:1.05;
-  text-transform:uppercase;
-}
-.rs-test-head h2 .accent{color:var(--rs-red)}
-.rs-test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.rs-tc{
-  background:#fff;
-  border:1px solid var(--rs-line);
-  border-radius:var(--r-md);
-  padding:40px;
-  display:flex;flex-direction:column;
-  transition:all .3s;
-  position:relative;
-}
-.rs-tc:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:transparent}
-.rs-tc-quote{
-  position:absolute;
-  top:24px;right:32px;
-  font-family:var(--display);
-  font-weight:700;font-size:80px;
-  line-height:.7;
-  color:var(--rs-red);
-  opacity:.18;
-}
-.rs-tc-stars{display:flex;gap:3px;margin-bottom:24px}
-.rs-tc-stars svg{width:16px;height:16px;color:var(--rs-red);fill:currentColor}
-.rs-tc-text{
-  flex:1;
-  font-size:15.5px;
-  line-height:1.7;
-  color:var(--rs-text);
-  margin-bottom:32px;
-  font-style:italic;
-}
-.rs-tc-foot{
-  display:flex;align-items:center;gap:14px;
-  padding-top:24px;
-  border-top:1px solid var(--rs-line);
-}
-.rs-tc-avatar{
-  width:44px;height:44px;
-  border-radius:50%;
-  background:var(--rs-red);
-  color:#fff;
-  display:inline-flex;align-items:center;justify-content:center;
-  font-family:var(--display);
-  font-weight:700;font-size:17px;
-  flex:none;
-}
-.rs-tc-name{font-family:var(--display);font-weight:600;font-size:14.5px;color:var(--rs-ink);line-height:1.2}
-.rs-tc-org{font-family:var(--body);font-size:12.5px;color:var(--rs-slate);margin-top:2px}
-
 /* KONTAKT */
 .rs-kontakt{padding:120px 0;background:var(--rs-gray-100)}
 .rs-kontakt-head{text-align:center;margin-bottom:64px;max-width:680px;margin-left:auto;margin-right:auto}
@@ -793,8 +758,8 @@ ul{margin:0;padding:0;list-style:none}
 .rs-krow .rs-kfield{margin-bottom:0}
 .rs-kfield label{
   font-family:var(--display);
-  font-weight:600;font-size:11px;
-  letter-spacing:.16em;text-transform:uppercase;
+  font-weight:600;font-size:12px;
+  letter-spacing:.14em;text-transform:uppercase;
   color:var(--rs-slate);
   margin-bottom:8px;
 }
@@ -814,7 +779,7 @@ ul{margin:0;padding:0;list-style:none}
 .rs-kfield input:focus,.rs-kfield select:focus,.rs-kfield textarea:focus{
   outline:none;
   border-color:var(--rs-red);
-  box-shadow:0 0 0 3px rgba(184,52,46,.1);
+  box-shadow:0 0 0 3px rgba(184,52,46,.18);
 }
 .rs-kform-submit{width:100%;justify-content:center;margin-top:8px}
 
@@ -902,8 +867,8 @@ ul{margin:0;padding:0;list-style:none}
   padding:10px 0;min-height:44px;
   transition:color .2s;
 }
-.rs-foot-tel a:hover{color:var(--rs-red-3)}
-.rs-foot-tel svg{width:16px;height:16px;color:var(--rs-red-3)}
+.rs-foot-tel a:hover{color:var(--rs-red-light)}
+.rs-foot-tel svg{width:16px;height:16px;color:var(--rs-red-light)}
 .rs-foot-col h4{
   font-family:var(--display);
   font-size:13px;font-weight:600;
@@ -940,10 +905,11 @@ ul{margin:0;padding:0;list-style:none}
 .rs-foot-legal a:hover{color:#fff}
 
 /* ANIMATIONS */
-.rs-r{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease}
-.rs-r.rs-vis{opacity:1;transform:translateY(0)}
+.js .rs-r{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease}
+.js .rs-r.rs-vis{opacity:1;transform:translateY(0)}
 @media (prefers-reduced-motion: reduce){
-  .rs-r{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .js .rs-r{opacity:1;transform:none;transition:none}
   *{animation-duration:0.01ms !important;transition-duration:0.01ms !important}
 }
 
@@ -968,8 +934,8 @@ ul{margin:0;padding:0;list-style:none}
   .rs-proj-card:nth-child(1){grid-column:span 2;grid-row:auto}
   .rs-proj-card:nth-child(4){grid-column:auto}
   .rs-ueber{grid-template-columns:1fr;gap:48px}
+  .rs-stats-side{position:relative;top:auto}
   .rs-vision-grid{grid-template-columns:1fr;gap:48px}
-  .rs-test-grid{grid-template-columns:1fr}
   .rs-kontakt-grid{grid-template-columns:1fr;gap:32px}
   .rs-foot-top{grid-template-columns:1fr 1fr;gap:48px}
 }
@@ -1012,11 +978,120 @@ ul{margin:0;padding:0;list-style:none}
   .rs-mono{width:38px;height:38px}
   .rs-hero h1{font-size:clamp(36px,11vw,56px)}
   .rs-btn{padding:14px 22px;font-size:13px}
-  .rs-tc{padding:28px}
+}
+
+/* ACCESSIBILITY & POLISH */
+h1,h2,h3{text-wrap:balance}
+p{text-wrap:pretty}
+.rs-skip{
+  position:absolute;left:16px;top:-80px;z-index:300;
+  background:var(--rs-ink);color:#fff;
+  font-family:var(--display);font-weight:600;font-size:14px;
+  padding:12px 20px;border-radius:var(--r-sm);
+}
+.rs-skip:focus{top:16px}
+main:focus{outline:none}
+:focus-visible{outline:3px solid var(--rs-red);outline-offset:3px}
+.rs-vision :focus-visible,.rs-foot :focus-visible,.rs-kinfo-card.dark :focus-visible,
+.rs-stats-side :focus-visible,.rs-lc-cta :focus-visible{outline-color:#fff}
+.rs-nowrap{white-space:nowrap}
+.rs-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+
+/* NAV: phone + active section */
+.rs-nav-tel{
+  display:inline-flex;align-items:center;gap:10px;flex:none;
+  font-family:var(--display);font-weight:600;font-size:14px;
+  color:var(--rs-ink);white-space:nowrap;
+  min-height:44px;padding:0 4px;
+  transition:color .2s;
+}
+.rs-nav-tel svg{width:18px;height:18px;color:var(--rs-red)}
+.rs-nav-tel:hover{color:var(--rs-red)}
+.rs-nav-links a[aria-current]{color:var(--rs-red)}
+.rs-nav-links a[aria-current]::after{width:100%}
+
+/* LEISTUNGEN: closing call-to-action tile */
+.rs-lc-cta{background:var(--rs-navy);border-color:var(--rs-navy);color:#fff;position:relative}
+.rs-lc-cta::before{
+  content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;
+  background:radial-gradient(circle, rgba(184,52,46,.22) 0%, transparent 70%);
+  pointer-events:none;
+}
+.rs-lc-cta-inner{position:relative;padding:36px 32px;display:flex;flex-direction:column;justify-content:center;flex:1}
+.rs-lc-cta-eyebrow{
+  font-family:var(--display);font-size:12px;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--rs-red-light);
+  margin-bottom:14px;
+}
+.rs-lc-cta h3{color:#fff;font-size:26px;line-height:1.15;margin-bottom:14px}
+.rs-lc-cta p{font-size:15px;line-height:1.65;color:rgba(255,255,255,.75);margin-bottom:28px}
+.rs-lc-cta-actions{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.rs-lc-cta-tel{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--display);font-weight:600;font-size:15px;color:#fff;
+  min-height:44px;white-space:nowrap;transition:color .2s;
+}
+.rs-lc-cta-tel svg{width:16px;height:16px;color:var(--rs-red-light)}
+.rs-lc-cta-tel:hover{color:var(--rs-red-light)}
+
+/* ÜBER UNS: call-to-action in summary card */
+.rs-stats-side-cta{position:relative;z-index:1;width:100%;justify-content:center;margin-top:36px}
+.rs-stats-side-tel{
+  position:relative;z-index:1;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  margin-top:8px;min-height:44px;
+  font-family:var(--display);font-weight:500;font-size:14.5px;color:rgba(255,255,255,.85);
+  transition:color .2s;
+}
+.rs-stats-side-tel svg{width:16px;height:16px;color:var(--rs-red-light)}
+.rs-stats-side-tel:hover{color:#fff}
+
+/* KONTAKT: form states */
+.rs-kform-hint{font-size:13.5px;color:var(--rs-slate);margin-bottom:24px}
+.rs-req{color:var(--rs-red)}
+.rs-opt{text-transform:none;letter-spacing:0;font-weight:500}
+.rs-kfield [aria-invalid="true"]{border-color:var(--rs-red)}
+.rs-kerr{font-size:13.5px;line-height:1.4;color:var(--rs-red-2);margin-top:8px}
+.rs-kform-note{font-size:13.5px;line-height:1.55;color:var(--rs-slate);margin-top:20px;text-align:center}
+.rs-kform-note a{color:var(--rs-ink);text-decoration:underline;text-underline-offset:2px}
+.rs-kform-note a:hover{color:var(--rs-red)}
+.rs-kform-success{text-align:center;padding:40px 8px}
+.rs-kform-success-icon{
+  width:64px;height:64px;margin:0 auto 24px;border-radius:50%;
+  background:var(--rs-red-soft);color:var(--rs-red);
+  display:flex;align-items:center;justify-content:center;
+}
+.rs-kform-success-icon svg{width:30px;height:30px}
+.rs-kform-success h3{font-size:24px;margin-bottom:12px}
+.rs-kform-success p{font-size:16px;color:var(--rs-slate);line-height:1.6}
+.rs-kform-success:focus{outline:none}
+.rs-ki-route{
+  display:inline-flex;align-items:center;gap:6px;min-height:44px;
+  font-family:var(--display);font-weight:600;font-size:13px;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--rs-red);
+}
+.rs-ki-text .rs-ki-route{display:flex;width:max-content;padding:0;margin-top:-4px;font-size:13px;color:var(--rs-red)}
+.rs-ki-text .rs-ki-route:hover{color:var(--rs-red-2)}
+
+@media(max-width:1279px){
+  .rs-nav-tel span{display:none}
+}
+@media(max-width:1100px){
+  .rs-nav-inner{gap:8px}
+  .rs-nav-tel{
+    margin-left:auto;width:44px;height:44px;padding:0;justify-content:center;
+    background:var(--rs-red-soft);border-radius:var(--r-sm);
+  }
+}
+@media(max-width:600px){
+  .rs-hero-actions .rs-btn,.rs-vision-actions .rs-btn{flex:1 1 100%;justify-content:center}
+  .rs-lc-cta-inner{padding:32px 24px}
 }
 </style>
 </head>
 <body>
+
+<a class="rs-skip" href="#inhalt">Zum Inhalt springen</a>
 
 <!-- NAV -->
 <nav class="rs-nav" id="rs-nav" aria-label="Hauptnavigation">
@@ -1040,14 +1115,15 @@ ul{margin:0;padding:0;list-style:none}
       <li><a href="#team">Team</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
+    <a href="tel:+41763838500" class="rs-nav-tel" aria-label="Anrufen: +41 76 383 85 00"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg><span aria-hidden="true">+41 76 383 85 00</span></a>
     <a href="#kontakt" class="rs-btn rs-btn--solid rs-nav-cta">Offerte anfragen <span class="arrow">→</span></a>
-    <button class="rs-hamb" id="rs-hamb" aria-label="Menü öffnen" aria-expanded="false">
+    <button class="rs-hamb" id="rs-hamb" aria-label="Menü öffnen" aria-expanded="false" aria-controls="rs-drawer">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
-<div class="rs-drawer" id="rs-drawer" aria-hidden="true">
+<nav class="rs-drawer" id="rs-drawer" aria-label="Menü">
   <ul class="rs-drawer-links">
     <li><a href="#leistungen">Leistungen</a></li>
     <li><a href="#projekte">Projekte</a></li>
@@ -1057,8 +1133,11 @@ ul{margin:0;padding:0;list-style:none}
   </ul>
   <div class="rs-drawer-cta">
     <a href="#kontakt" class="rs-btn rs-btn--solid">Offerte anfragen <span class="arrow">→</span></a>
+    <a href="tel:+41763838500" class="rs-btn rs-btn--ghost">Anrufen: +41 76 383 85 00</a>
   </div>
-</div>
+</nav>
+
+<main id="inhalt" tabindex="-1">
 
 <!-- HERO -->
 <section class="rs-hero" id="top">
@@ -1072,7 +1151,7 @@ ul{margin:0;padding:0;list-style:none}
           <span class="line">Effizienz<span class="dot">.</span></span>
         </h1>
         <p class="rs-hero-lead">
-          Ein junges Team, ehrliches Handwerk und Liebe zur Farbe. Wir verputzen, malen und bauen leicht im Raum Zürich. Als anerkannter Lehrbetrieb mit VKF-Brandschutzspezialisierung stehen wir für saubere Arbeit und Termintreue.
+          Ein junges Team, ehrliches Handwerk und Liebe zur Farbe. Wir verputzen, malen und realisieren Leichtbauten im Raum Zürich. Als Lehrbetrieb und Spezialist für Brandschutz nach VKF-Vorschriften stehen wir für saubere Arbeit und Termintreue.
         </p>
         <div class="rs-hero-actions">
           <a href="#kontakt" class="rs-btn rs-btn--solid">Offerte anfragen <span class="arrow">→</span></a>
@@ -1080,14 +1159,12 @@ ul{margin:0;padding:0;list-style:none}
         </div>
       </div>
       <div class="rs-hero-photo">
-        <img src="assets/img/team-hero.jpg" alt="Romeo + Sohn Team auf einer Baustelle in Zürich mit Blick auf das Fraumünster im Abendlicht" loading="eager">
+        <img src="assets/img/team-hero.jpg" alt="Team von Romeo + Sohn auf einer Baustelle in Zürich, im Hintergrund das Fraumünster im Abendlicht" width="1536" height="1024" loading="eager" fetchpriority="high">
       </div>
     </div>
     <div class="rs-hero-stats">
-      <div class="rs-r"><div class="rs-hs-num">5.0</div><div class="rs-hs-lbl">Google Bewertung</div></div>
       <div class="rs-r"><div class="rs-hs-num">7</div><div class="rs-hs-lbl">Fachbereiche</div></div>
-      <div class="rs-r"><div class="rs-hs-num">VKF</div><div class="rs-hs-lbl">Brandschutz Spez.</div></div>
-      <div class="rs-r"><div class="rs-hs-num">10+</div><div class="rs-hs-lbl">Jahre Erfahrung</div></div>
+      <div class="rs-r"><div class="rs-hs-num">VKF</div><div class="rs-hs-lbl">Brandschutz</div></div>
     </div>
   </div>
 </section>
@@ -1099,7 +1176,7 @@ ul{margin:0;padding:0;list-style:none}
       <div class="rs-sec-head">
         <span class="rs-eyebrow">Leistungen</span>
         <h2>Sieben Fachbereiche, <span class="accent">ein Team.</span></h2>
-        <p class="lead">Vom Neubau bis zur kompletten Renovation, von der Fassade bis zum Brandschutz. Unser Gipsergeschäft deckt sieben Kernbereiche ab und koordiniert sie unter einem Dach.</p>
+        <p class="lead">Vom Neubau bis zur Komplettrenovation, von der Fassade bis zum Brandschutz: Unser Gipsergeschäft deckt sieben Fachbereiche ab – alles aus einer Hand.</p>
       </div>
       <a href="#kontakt" class="rs-btn rs-btn--ghost">Beratung anfragen</a>
     </div>
@@ -1107,86 +1184,98 @@ ul{margin:0;padding:0;list-style:none}
       <article class="rs-lc rs-r">
         <div class="rs-lc-img">
           <span class="rs-lc-tag">Neubau und Umbau</span>
-          <img src="https://images.unsplash.com/photo-1635006459494-c9b9665a666e?w=900&q=80&auto=format&fit=crop" alt="Neubau Projekt" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1635006459494-c9b9665a666e?w=900&q=80&auto=format&fit=crop" alt="Neubauprojekt" loading="lazy" decoding="async">
         </div>
         <div class="rs-lc-body">
           <h3>Neu- und Umbauten</h3>
-          <p>Spezialisten für Neubauten und Sanierungen. Wir sorgen durch stabilen Unterbau für Langlebigkeit, schützen vor Witterung und mechanischen Beschädigungen.</p>
-          <a href="#kontakt" class="rs-lc-link">Mehr erfahren <span class="arrow">→</span></a>
+          <p>Ob Neubau oder Sanierung: Mit einem soliden Unterbau sorgen wir für Langlebigkeit und schützen Ihr Gebäude vor Witterung und mechanischer Beschädigung.</p>
+          <a href="#kontakt" class="rs-lc-link" data-leistung="Neu- und Umbauten">Offerte anfragen <span class="arrow">→</span></a>
         </div>
       </article>
 
       <article class="rs-lc rs-r">
         <div class="rs-lc-img">
           <span class="rs-lc-tag">Innenputz</span>
-          <img src="https://images.unsplash.com/photo-1577200080776-fe8b6c5559dc?w=600&q=80&auto=format&fit=crop" alt="Verputz Arbeit" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1577200080776-fe8b6c5559dc?w=600&q=80&auto=format&fit=crop" alt="Verputzarbeiten" loading="lazy" decoding="async">
         </div>
         <div class="rs-lc-body">
           <h3>Verputz</h3>
-          <p>Wir schaffen aus einem kahlen Rohbau ein wohliges Umfeld und sorgen für gesundes Raumklima. Mit dem richtigen Innenputz steigern wir Energieeffizienz und Schallschutz.</p>
-          <a href="#kontakt" class="rs-lc-link">Mehr erfahren <span class="arrow">→</span></a>
+          <p>Aus einem kahlen Rohbau schaffen wir wohnliche Räume mit gesundem Raumklima. Mit dem richtigen Innenputz verbessern wir zudem Energieeffizienz und Schallschutz.</p>
+          <a href="#kontakt" class="rs-lc-link" data-leistung="Verputz">Offerte anfragen <span class="arrow">→</span></a>
         </div>
       </article>
 
       <article class="rs-lc rs-r">
         <div class="rs-lc-img">
           <span class="rs-lc-tag">Komplettsanierung</span>
-          <img src="https://images.unsplash.com/photo-1660029763088-d8c1dff1a5e3?w=600&q=80&auto=format&fit=crop" alt="Renovation Innenraum" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1660029763088-d8c1dff1a5e3?w=600&q=80&auto=format&fit=crop" alt="Renovierter Innenraum" loading="lazy" decoding="async">
         </div>
         <div class="rs-lc-body">
           <h3>Renovationen</h3>
-          <p>Ob Komplettsanierung oder Umbau: Alle Gewerke unter einem Dach. Wir planen, koordinieren und kontrollieren, sichern Termine und sparen Ihnen Zeit und Nerven.</p>
-          <a href="#kontakt" class="rs-lc-link">Mehr erfahren <span class="arrow">→</span></a>
+          <p>Ob Komplettsanierung oder Umbau – wir koordinieren alle beteiligten Gewerke für Sie. Wir planen, organisieren und überwachen die Arbeiten, halten Termine ein und sparen Ihnen Zeit und Nerven.</p>
+          <a href="#kontakt" class="rs-lc-link" data-leistung="Renovationen">Offerte anfragen <span class="arrow">→</span></a>
         </div>
       </article>
 
       <article class="rs-lc rs-r">
         <div class="rs-lc-img">
           <span class="rs-lc-tag">Wärmedämmung</span>
-          <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&q=80&auto=format&fit=crop" alt="Fassade" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&q=80&auto=format&fit=crop" alt="Sanierte Fassade" loading="lazy" decoding="async">
         </div>
         <div class="rs-lc-body">
           <h3>Fassaden</h3>
-          <p>Die Fassadendämmung ist Königsdisziplin der Wärmedämmung und senkt den Energieverbrauch wie kaum eine andere Massnahme. Wir wählen das richtige System für Ihren Bau.</p>
-          <a href="#kontakt" class="rs-lc-link">Mehr erfahren <span class="arrow">→</span></a>
+          <p>Die Fassadendämmung ist die Königsdisziplin der Wärmedämmung und senkt den Energieverbrauch wie kaum eine andere Massnahme. Gemeinsam mit Ihnen wählen wir das passende System für Ihr Gebäude.</p>
+          <a href="#kontakt" class="rs-lc-link" data-leistung="Fassaden">Offerte anfragen <span class="arrow">→</span></a>
         </div>
       </article>
 
       <article class="rs-lc rs-r">
         <div class="rs-lc-img">
           <span class="rs-lc-tag">Trockenbau</span>
-          <img src="https://images.unsplash.com/photo-1543525324-26e03b510586?w=600&q=80&auto=format&fit=crop" alt="Leichtbau Innenausbau" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1543525324-26e03b510586?w=600&q=80&auto=format&fit=crop" alt="Innenausbau in Leichtbauweise" loading="lazy" decoding="async">
         </div>
         <div class="rs-lc-body">
           <h3>Leichtbau</h3>
-          <p>Im Trockenbau realisieren wir individuelle Innenarchitekturkonzepte. Trennwände, Verkleidungen, Isolierungen, Raum-in-Raum-Systeme, Decken und mehr.</p>
-          <a href="#kontakt" class="rs-lc-link">Mehr erfahren <span class="arrow">→</span></a>
+          <p>Im Leichtbau setzen wir individuelle Raumkonzepte um: Trennwände, Verkleidungen, Dämmungen, Decken, Raum-in-Raum-Systeme und vieles mehr.</p>
+          <a href="#kontakt" class="rs-lc-link" data-leistung="Leichtbau">Offerte anfragen <span class="arrow">→</span></a>
         </div>
       </article>
 
       <article class="rs-lc rs-r">
         <div class="rs-lc-img">
-          <span class="rs-lc-tag">VKF Spezialisten</span>
-          <img src="https://images.unsplash.com/photo-1673263404448-a48d0d70a4ae?w=600&q=80&auto=format&fit=crop" alt="Brandschutz Wand" loading="lazy">
+          <span class="rs-lc-tag">Nach VKF-Vorschriften</span>
+          <img src="https://images.unsplash.com/photo-1673263404448-a48d0d70a4ae?w=600&q=80&auto=format&fit=crop" alt="Brandschutzwand" loading="lazy" decoding="async">
         </div>
         <div class="rs-lc-body">
           <h3>Brandschutz VKF</h3>
-          <p>Für jede Situation die optimale Brandschutzlösung. Als zertifizierte VKF-Spezialisten setzen wir Brandschutzwände, Schotts und Abschottungen fachgerecht um.</p>
-          <a href="#kontakt" class="rs-lc-link">Mehr erfahren <span class="arrow">→</span></a>
+          <p>Für jede Situation die passende Brandschutzlösung. Wir erstellen Brandschutzwände und Brandabschottungen fachgerecht – nach den geltenden VKF-Brandschutzvorschriften und mit VKF-anerkannten Systemen.</p>
+          <a href="#kontakt" class="rs-lc-link" data-leistung="Brandschutz VKF">Offerte anfragen <span class="arrow">→</span></a>
         </div>
       </article>
 
       <article class="rs-lc rs-r">
         <div class="rs-lc-img">
           <span class="rs-lc-tag">Innen und Aussen</span>
-          <img src="https://images.unsplash.com/photo-1604181594030-24593e04d049?w=600&q=80&auto=format&fit=crop" alt="Malerarbeit" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1604181594030-24593e04d049?w=600&q=80&auto=format&fit=crop" alt="Malerarbeiten" loading="lazy" decoding="async">
         </div>
         <div class="rs-lc-body">
           <h3>Malerei</h3>
-          <p>Präzise Malerarbeiten mit Auge fürs Detail. Saubere Verarbeitung und Liebe zur Farbe, für Innenräume und Fassaden gleichermassen.</p>
-          <a href="#kontakt" class="rs-lc-link">Mehr erfahren <span class="arrow">→</span></a>
+          <p>Präzise Malerarbeiten mit einem Auge fürs Detail. Saubere Ausführung und Liebe zur Farbe – für Innenräume und Fassaden gleichermassen.</p>
+          <a href="#kontakt" class="rs-lc-link" data-leistung="Malerei">Offerte anfragen <span class="arrow">→</span></a>
         </div>
       </article>
+
+      <aside class="rs-lc rs-lc-cta rs-r" aria-labelledby="rs-lc-cta-title">
+        <div class="rs-lc-cta-inner">
+          <span class="rs-lc-cta-eyebrow">Persönliche Beratung</span>
+          <h3 id="rs-lc-cta-title">Ihr Vorhaben ist nicht dabei?</h3>
+          <p>Jedes Projekt ist anders. Erzählen Sie uns, was Sie planen – wir nehmen uns gerne Zeit für eine persönliche Beratung.</p>
+          <div class="rs-lc-cta-actions">
+            <a href="#kontakt" class="rs-btn rs-btn--solid">Offerte anfragen <span class="arrow">→</span></a>
+            <a href="tel:+41763838500" class="rs-lc-cta-tel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>+41 76 383 85 00</a>
+          </div>
+        </div>
+      </aside>
     </div>
   </div>
 </section>
@@ -1198,22 +1287,22 @@ ul{margin:0;padding:0;list-style:none}
       <div class="rs-sec-head">
         <span class="rs-eyebrow">Referenzen</span>
         <h2>Saubere Arbeit, <span class="accent">termingerecht.</span></h2>
-        <p class="lead">Eine Auswahl aus Projekten der letzten Jahre. Vom Praxisumbau über Lehmputz-Wohnräume bis zu Brandschutzwänden im Bürogebäude.</p>
+        <p class="lead">Eine Auswahl unserer Projekte der letzten Jahre – vom Praxisumbau über Wohnräume mit Lehmputz bis zur Brandschutzwand im Bürogebäude.</p>
       </div>
-      <a href="#kontakt" class="rs-btn rs-btn--ghost">Alle Referenzen</a>
+      <a href="#kontakt" class="rs-btn rs-btn--ghost">Projekt besprechen</a>
     </div>
     <div class="rs-proj-grid">
       <article class="rs-proj-card rs-r">
-        <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=1200&q=80&auto=format&fit=crop" alt="PhysioWelt Praxisrenovation" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=1200&q=80&auto=format&fit=crop" alt="Praxisrenovation PhysioWelt" loading="lazy" decoding="async">
         <span class="rs-proj-cat">Komplettrenovation</span>
         <div class="rs-proj-body">
           <div class="rs-proj-meta">Schlieren · 2025</div>
-          <h3 class="rs-proj-title">PhysioWelt Praxisrenovation</h3>
+          <h3 class="rs-proj-title">Praxisrenovation PhysioWelt</h3>
         </div>
       </article>
 
       <article class="rs-proj-card rs-r">
-        <img src="https://images.unsplash.com/photo-1691425700585-c108acad6467?w=800&q=80&auto=format&fit=crop" alt="Fassadensanierung" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1691425700585-c108acad6467?w=800&q=80&auto=format&fit=crop" alt="Fassadensanierung Mehrfamilienhaus" loading="lazy" decoding="async">
         <span class="rs-proj-cat">Fassade</span>
         <div class="rs-proj-body">
           <div class="rs-proj-meta">Zürich · 2025</div>
@@ -1222,7 +1311,7 @@ ul{margin:0;padding:0;list-style:none}
       </article>
 
       <article class="rs-proj-card rs-r">
-        <img src="https://images.unsplash.com/photo-1577200080776-fe8b6c5559dc?w=800&q=80&auto=format&fit=crop" alt="Lehmputz" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1577200080776-fe8b6c5559dc?w=800&q=80&auto=format&fit=crop" alt="Lehmputz im Wohnzimmer" loading="lazy" decoding="async">
         <span class="rs-proj-cat">Naturbaustoff</span>
         <div class="rs-proj-body">
           <div class="rs-proj-meta">Schlieren · 2024</div>
@@ -1231,7 +1320,7 @@ ul{margin:0;padding:0;list-style:none}
       </article>
 
       <article class="rs-proj-card rs-r">
-        <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?w=1400&q=80&auto=format&fit=crop" alt="Brandschutzwand Bürogebäude" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?w=1400&q=80&auto=format&fit=crop" alt="Brandschutzwand Bürogebäude" loading="lazy" decoding="async">
         <span class="rs-proj-cat">Brandschutz VKF</span>
         <div class="rs-proj-body">
           <div class="rs-proj-meta">Dietikon · 2024</div>
@@ -1248,54 +1337,46 @@ ul{margin:0;padding:0;list-style:none}
     <div class="rs-ueber">
       <div class="rs-ueber-main rs-r">
         <span class="rs-eyebrow">Über uns</span>
-        <h2>Ein junges Team, ehrliches <span class="accent">Handwerk.</span></h2>
-        <p>Romeo + Sohn GmbH ist ein junges Gipsergeschäft in Schlieren ZH. Wir glauben daran, dass Handwerk Persönlichkeit braucht und Sauberkeit die Visitenkarte einer guten Baustelle ist. Als anerkannter Lehrbetrieb investieren wir aktiv in die nächste Generation Gipser und Maler.</p>
+        <h2>Handwerk mit <span class="accent">Persönlichkeit.</span></h2>
+        <p>Romeo + Sohn GmbH ist ein junges Gipsergeschäft in Schlieren ZH. Wir sind überzeugt: Gutes Handwerk braucht Persönlichkeit, und eine saubere Baustelle ist die beste Visitenkarte. Seit Kurzem sind wir zudem Lehrbetrieb und investieren aktiv in die nächste Generation.</p>
         <div class="rs-vals">
           <div class="rs-val">
             <span class="rs-val-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 5-3.5 8-9 8s-9-3-9-8 3.5-8 9-8c1.5 0 3 .2 4 .7"/></svg></span>
-            <h4>Sauberkeit</h4>
-            <p>Eine saubere Baustelle ist die Visitenkarte einer guten Baustelle.</p>
+            <h3>Sauberkeit</h3>
+            <p>Wir decken sorgfältig ab, arbeiten sauber und übergeben jede Baustelle besenrein.</p>
           </div>
           <div class="rs-val">
             <span class="rs-val-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-            <h4>Zuverlässigkeit</h4>
-            <p>Termine sind Termine. Wir kommunizieren früh und liefern verlässlich.</p>
+            <h3>Zuverlässigkeit</h3>
+            <p>Termine sind verbindlich. Wir informieren frühzeitig und halten, was wir versprechen.</p>
           </div>
           <div class="rs-val">
             <span class="rs-val-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1 4 3 6 3s6-2 6-3v-5"/></svg></span>
-            <h4>Lehrbetrieb</h4>
-            <p>Anerkannter Lehrbetrieb. Wir bilden Gipser und Maler aus.</p>
+            <h3>Lehrbetrieb</h3>
+            <p>Seit Kurzem sind wir Lehrbetrieb und geben unser Handwerk an Lernende weiter.</p>
           </div>
           <div class="rs-val">
             <span class="rs-val-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 6 6 10 6 14a6 6 0 0012 0c0-4-2-8-6-12z"/></svg></span>
-            <h4>Nachhaltigkeit</h4>
-            <p>Lehm-, Kalk- und mineralische Putze. Gut für Klima und Raumklima.</p>
+            <h3>Nachhaltigkeit</h3>
+            <p>Wir setzen auf Lehm-, Kalk- und Mineralputze – gut für die Umwelt und das Raumklima.</p>
           </div>
         </div>
       </div>
       <aside class="rs-stats-side rs-r">
-        <div class="rs-stats-side-label">In Zahlen</div>
+        <div class="rs-stats-side-label">Auf einen Blick</div>
         <div class="rs-stats-side-list">
-          <div class="rs-stats-side-item">
-            <div class="rs-stats-side-num">10+</div>
-            <div class="rs-stats-side-desc">Jahre Erfahrung im Schweizer Gipserhandwerk</div>
-          </div>
-          <div class="rs-stats-side-divider"></div>
           <div class="rs-stats-side-item">
             <div class="rs-stats-side-num">7</div>
             <div class="rs-stats-side-desc">Fachbereiche unter einem Dach</div>
           </div>
           <div class="rs-stats-side-divider"></div>
           <div class="rs-stats-side-item">
-            <div class="rs-stats-side-num">5.0</div>
-            <div class="rs-stats-side-desc">Google Bewertung von zufriedenen Kunden</div>
-          </div>
-          <div class="rs-stats-side-divider"></div>
-          <div class="rs-stats-side-item">
             <div class="rs-stats-side-num">VKF</div>
-            <div class="rs-stats-side-desc">Anerkannte Brandschutzspezialisten</div>
+            <div class="rs-stats-side-desc">Brandschutz nach den geltenden VKF-Vorschriften</div>
           </div>
         </div>
+        <a href="#kontakt" class="rs-btn rs-btn--solid rs-stats-side-cta">Offerte anfragen <span class="arrow">→</span></a>
+        <a href="tel:+41763838500" class="rs-stats-side-tel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>+41 76 383 85 00</a>
       </aside>
     </div>
   </div>
@@ -1308,9 +1389,9 @@ ul{margin:0;padding:0;list-style:none}
       <div class="rs-vision-main rs-r">
         <span class="eyebrow-white">Unsere Vision</span>
         <h2>Mehr Natur an die <span class="accent">Wand.</span></h2>
-        <p>Wir setzen uns für die Verwendung natürlicher Baustoffe ein, weil sie schöner sind, gesünder und länger halten. Lehm-, Kalk- und mineralische Putze regulieren Feuchte, binden Schadstoffe und kommen ohne synthetische Zusätze aus.</p>
+        <p>Wir setzen uns für natürliche Baustoffe ein, weil sie schöner, gesünder und langlebiger sind. Lehm-, Kalk- und Mineralputze regulieren die Luftfeuchtigkeit, binden Schadstoffe und kommen ohne synthetische Zusätze aus.</p>
         <div class="rs-vision-actions">
-          <a href="#kontakt" class="rs-btn rs-btn--solid">Naturputz beraten lassen <span class="arrow">→</span></a>
+          <a href="#kontakt" class="rs-btn rs-btn--solid">Beratung zu Naturputzen <span class="arrow">→</span></a>
           <a href="#leistungen" class="rs-btn rs-btn--ghost">Mehr erfahren</a>
         </div>
       </div>
@@ -1319,24 +1400,24 @@ ul{margin:0;padding:0;list-style:none}
           <div class="rs-vision-feat">
             <div class="rs-vision-feat-num">01</div>
             <div>
-              <h5>Kalkputz</h5>
-              <p>Reguliert Feuchte, beugt Schimmel vor, antibakteriell durch natürlichen pH-Wert.</p>
+              <h3>Kalkputz</h3>
+              <p>Reguliert die Luftfeuchtigkeit, beugt Schimmel vor und wirkt dank hohem pH-Wert natürlich antibakteriell.</p>
             </div>
           </div>
           <div class="rs-vision-divider"></div>
           <div class="rs-vision-feat">
             <div class="rs-vision-feat-num">02</div>
             <div>
-              <h5>Lehmputz</h5>
-              <p>Speichert Wärme, bindet Schadstoffe aus der Raumluft, vollständig recyclebar.</p>
+              <h3>Lehmputz</h3>
+              <p>Speichert Wärme, bindet Schadstoffe aus der Raumluft und ist vollständig rezyklierbar.</p>
             </div>
           </div>
           <div class="rs-vision-divider"></div>
           <div class="rs-vision-feat">
             <div class="rs-vision-feat-num">03</div>
             <div>
-              <h5>Mineralische Farben</h5>
-              <p>Diffusionsoffen, lichtbeständig, frei von Lösungsmitteln und Bioziden.</p>
+              <h3>Mineralische Farben</h3>
+              <p>Diffusionsoffen, lichtbeständig und frei von Lösungsmitteln und Bioziden.</p>
             </div>
           </div>
         </div>
@@ -1349,11 +1430,11 @@ ul{margin:0;padding:0;list-style:none}
 <section class="rs-sec" id="team">
   <div class="rs-wrap">
     <div class="rs-team-block rs-r">
-      <span class="rs-team-quote-mark" aria-hidden="true">"</span>
+      <span class="rs-team-quote-mark" aria-hidden="true">«</span>
       <span class="rs-eyebrow">Unser Team</span>
       <h2>Wir gipsen <span class="accent">aus Leidenschaft.</span></h2>
       <p class="rs-team-quote">
-        Ein eingespieltes Team aus Gipsern, Malern und Lehrlingen. Saubere Berufskleidung, ehrliches Handwerk und ein Auge fürs Detail. Als anerkannter <span class="accent">Lehrbetrieb</span> investieren wir aktiv in die nächste Generation.
+        Ein eingespieltes Team aus Gipsern und Malern – mit gepflegtem Auftritt, ehrlichem Handwerk und einem Auge fürs Detail. Als <span class="accent">Lehrbetrieb</span> geben wir unser Wissen an die nächste Generation weiter.
       </p>
       <div class="rs-team-meta-actions">
         <a href="tel:+41763838500" class="rs-team-contact">
@@ -1366,79 +1447,11 @@ ul{margin:0;padding:0;list-style:none}
           info@romeosohn.ch
         </a>
         <span class="rs-team-divider" aria-hidden="true"></span>
-        <a href="#kontakt" class="rs-team-contact">
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Schulstrasse+34%2C+8952+Schlieren" class="rs-team-contact" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-7 8-13a8 8 0 10-16 0c0 6 8 13 8 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          Schulstrasse 34, Schlieren
+          Schulstrasse 34, 8952&nbsp;Schlieren<span class="rs-sr"> (öffnet Google Maps)</span>
         </a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="rs-sec rs-sec--alt">
-  <div class="rs-wrap">
-    <div class="rs-test-head">
-      <span class="rs-eyebrow">Kundenstimmen</span>
-      <h2>5 Sterne. <span class="accent">Drei Stimmen.</span></h2>
-    </div>
-    <div class="rs-test-grid">
-      <article class="rs-tc rs-r">
-        <div class="rs-tc-quote">"</div>
-        <div class="rs-tc-stars" aria-label="5 von 5 Sternen">
-          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/></svg>
-        </div>
-        <p class="rs-tc-text">Saubere Arbeit, termingerecht, faire Preise. Die Praxisrenovation lief reibungslos und das Ergebnis spricht für sich. Klare Empfehlung.</p>
-        <div class="rs-tc-foot">
-          <div class="rs-tc-avatar">PH</div>
-          <div>
-            <div class="rs-tc-name">Pieter H.</div>
-            <div class="rs-tc-org">PhysioWelt</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="rs-tc rs-r">
-        <div class="rs-tc-quote">"</div>
-        <div class="rs-tc-stars" aria-label="5 von 5 Sternen">
-          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/></svg>
-        </div>
-        <p class="rs-tc-text">Endlich ein Gipser, der sich Zeit nimmt und die Optionen erklärt. Lehmputz im Wohnzimmer war eine gute Entscheidung. Raumklima merklich besser.</p>
-        <div class="rs-tc-foot">
-          <div class="rs-tc-avatar">MZ</div>
-          <div>
-            <div class="rs-tc-name">Meki Z.</div>
-            <div class="rs-tc-org">Privatkunde</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="rs-tc rs-r">
-        <div class="rs-tc-quote">"</div>
-        <div class="rs-tc-stars" aria-label="5 von 5 Sternen">
-          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/></svg>
-        </div>
-        <p class="rs-tc-text">Verlässlich, unkompliziert, ehrliche Beratung. Das Team kommt vorbei, schaut sich die Lage an und liefert eine klare Offerte. So muss Handwerk sein.</p>
-        <div class="rs-tc-foot">
-          <div class="rs-tc-avatar">GT</div>
-          <div>
-            <div class="rs-tc-name">Granit T.</div>
-            <div class="rs-tc-org">Privatkunde</div>
-          </div>
-        </div>
-      </article>
     </div>
   </div>
 </section>
@@ -1449,34 +1462,40 @@ ul{margin:0;padding:0;list-style:none}
     <div class="rs-kontakt-head">
       <span class="rs-eyebrow">Kontakt</span>
       <h2>Sprechen wir über Ihr <span class="accent">Projekt.</span></h2>
-      <p>Ob Renovation, Neubau oder Fassade: Schreiben Sie uns kurz, was Sie vorhaben. Wir melden uns innerhalb eines Werktages.</p>
+      <p>Ob Renovation, Neubau oder Fassade: Schreiben Sie uns kurz, was Sie vorhaben. Wir melden uns innert eines Arbeitstages.</p>
     </div>
     <div class="rs-kontakt-grid">
       <form class="rs-kform rs-r" id="rs-kform" novalidate>
+        <!-- Mockup: Formular muss vor dem Livegang an einen Versanddienst/Server angebunden werden. -->
+        <div class="rs-kform-fields" id="rs-kform-fields">
+        <p class="rs-kform-hint">Pflichtfelder sind mit <span class="rs-req" aria-hidden="true">*</span> markiert.</p>
         <div class="rs-krow">
           <div class="rs-kfield">
-            <label for="rs-vorname">Vorname</label>
-            <input type="text" id="rs-vorname" name="vorname" required>
+            <label for="rs-vorname">Vorname <span class="rs-req" aria-hidden="true">*</span></label>
+            <input type="text" id="rs-vorname" name="vorname" autocomplete="given-name" required aria-describedby="rs-vorname-err">
+            <p class="rs-kerr" id="rs-vorname-err" hidden></p>
           </div>
           <div class="rs-kfield">
-            <label for="rs-nachname">Nachname</label>
-            <input type="text" id="rs-nachname" name="nachname" required>
+            <label for="rs-nachname">Nachname <span class="rs-req" aria-hidden="true">*</span></label>
+            <input type="text" id="rs-nachname" name="nachname" autocomplete="family-name" required aria-describedby="rs-nachname-err">
+            <p class="rs-kerr" id="rs-nachname-err" hidden></p>
           </div>
         </div>
         <div class="rs-krow">
           <div class="rs-kfield">
-            <label for="rs-email">E-Mail</label>
-            <input type="email" id="rs-email" name="email" required>
+            <label for="rs-email">E-Mail <span class="rs-req" aria-hidden="true">*</span></label>
+            <input type="email" id="rs-email" name="email" autocomplete="email" required aria-describedby="rs-email-err">
+            <p class="rs-kerr" id="rs-email-err" hidden></p>
           </div>
           <div class="rs-kfield">
-            <label for="rs-tel">Telefon</label>
-            <input type="tel" id="rs-tel" name="telefon">
+            <label for="rs-tel">Telefon <span class="rs-opt">(optional)</span></label>
+            <input type="tel" id="rs-tel" name="telefon" autocomplete="tel" inputmode="tel">
           </div>
         </div>
         <div class="rs-kfield">
           <label for="rs-leistung">Leistung</label>
           <select id="rs-leistung" name="leistung">
-            <option>Bitte wählen</option>
+            <option value="">Bitte auswählen</option>
             <option>Neu- und Umbauten</option>
             <option>Verputz</option>
             <option>Renovationen</option>
@@ -1484,7 +1503,7 @@ ul{margin:0;padding:0;list-style:none}
             <option>Leichtbau</option>
             <option>Brandschutz VKF</option>
             <option>Malerei</option>
-            <option>Mehrere / unsicher</option>
+            <option>Mehrere Bereiche / noch unklar</option>
           </select>
         </div>
         <div class="rs-kfield">
@@ -1492,6 +1511,14 @@ ul{margin:0;padding:0;list-style:none}
           <textarea id="rs-nachricht" name="nachricht" placeholder="Was haben Sie vor? Wo? Bis wann?"></textarea>
         </div>
         <button type="submit" class="rs-btn rs-btn--solid rs-kform-submit">Anfrage senden <span class="arrow">→</span></button>
+        <p class="rs-kform-note">Ihre Angaben verwenden wir ausschliesslich zur Bearbeitung Ihrer Anfrage. Mehr dazu in unserer <a href="#datenschutz">Datenschutzerklärung</a>.</p>
+        </div>
+        <div class="rs-kform-success" id="rs-kform-success" tabindex="-1" hidden>
+          <div class="rs-kform-success-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12l5 5 9-10"/></svg></div>
+          <h3>Vielen Dank für Ihre Anfrage.</h3>
+          <p>Wir melden uns innert eines Arbeitstages bei Ihnen.</p>
+        </div>
+        <div class="rs-kform-status rs-sr" id="rs-kform-status" role="status"></div>
       </form>
       <aside class="rs-kinfo rs-r">
         <div class="rs-kinfo-card dark">
@@ -1501,7 +1528,7 @@ ul{margin:0;padding:0;list-style:none}
             </span>
             <div class="rs-ki-text">
               <strong>Telefon</strong>
-              <a href="tel:+41763838500">+41 76 383 85 00</a>
+              <a href="tel:+41763838500" class="rs-nowrap">+41 76 383 85 00</a>
             </div>
           </div>
           <div class="rs-ki">
@@ -1521,7 +1548,8 @@ ul{margin:0;padding:0;list-style:none}
             </span>
             <div class="rs-ki-text">
               <strong>Standort</strong>
-              <p>Schulstrasse 34, 8952 Schlieren</p>
+              <p>Schulstrasse 34, 8952&nbsp;Schlieren</p>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Schulstrasse+34%2C+8952+Schlieren" class="rs-ki-route" target="_blank" rel="noopener">Route planen <span aria-hidden="true">→</span><span class="rs-sr"> (öffnet Google Maps)</span></a>
             </div>
           </div>
           <div class="rs-ki">
@@ -1530,7 +1558,7 @@ ul{margin:0;padding:0;list-style:none}
             </span>
             <div class="rs-ki-text">
               <strong>Öffnungszeiten</strong>
-              <p>Mo bis Fr: 7:00 - 19:00<br>Sa: 7:00 - 12:00</p>
+              <p>Mo–Fr: 7.00–19.00 Uhr<br>Sa: 7.00–12.00 Uhr</p>
             </div>
           </div>
         </div>
@@ -1538,6 +1566,8 @@ ul{margin:0;padding:0;list-style:none}
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer class="rs-foot" role="contentinfo">
@@ -1556,7 +1586,7 @@ ul{margin:0;padding:0;list-style:none}
             <span class="rs-wm-sub">GMBH</span>
           </span>
         </a>
-        <p class="rs-foot-desc">Ihr Gipsergeschäft in Schlieren. Qualität, Sauberkeit und Effizienz seit über zehn Jahren im Raum Zürich.</p>
+        <p class="rs-foot-desc">Ihr Gipsergeschäft in Schlieren ZH. Qualität, Sauberkeit und Effizienz im Raum Zürich.</p>
         <div class="rs-foot-tel">
           <a href="tel:+41763838500">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>
@@ -1578,6 +1608,7 @@ ul{margin:0;padding:0;list-style:none}
       </div>
       <div class="rs-foot-col">
         <h4>Leistungen</h4>
+        <a href="#leistungen">Neu- und Umbauten</a>
         <a href="#leistungen">Verputz</a>
         <a href="#leistungen">Fassaden</a>
         <a href="#leistungen">Renovationen</a>
@@ -1588,7 +1619,7 @@ ul{margin:0;padding:0;list-style:none}
       <div class="rs-foot-col">
         <h4>Standort</h4>
         <p>Romeo + Sohn GmbH<br>Schulstrasse 34<br>8952 Schlieren</p>
-        <p>Mo bis Fr: 7:00 - 19:00<br>Sa: 7:00 - 12:00</p>
+        <p>Mo–Fr: 7.00–19.00 Uhr<br>Sa: 7.00–12.00 Uhr</p>
       </div>
     </div>
     <hr class="rs-foot-divider">
@@ -1596,7 +1627,7 @@ ul{margin:0;padding:0;list-style:none}
       <p>© 2026 Romeo + Sohn GmbH. Alle Rechte vorbehalten.</p>
       <div class="rs-foot-legal">
         <a href="#impressum">Impressum</a>
-        <a href="#datenschutz">Datenschutz</a>
+        <a href="#datenschutz">Datenschutzerklärung</a>
         <a href="#agb">AGB</a>
       </div>
     </div>
@@ -1610,23 +1641,30 @@ ul{margin:0;padding:0;list-style:none}
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
 
+  /* Mobile menu */
   var hamb = document.getElementById('rs-hamb');
   var drawer = document.getElementById('rs-drawer');
-  function setOpen(open){
+  function setOpen(open, returnFocus){
     drawer.classList.toggle('open', open);
     hamb.classList.toggle('active', open);
     hamb.setAttribute('aria-expanded', String(open));
-    drawer.setAttribute('aria-hidden', String(!open));
+    hamb.setAttribute('aria-label', open ? 'Menü schliessen' : 'Menü öffnen');
     document.body.style.overflow = open ? 'hidden' : '';
+    if(open){ var first = drawer.querySelector('a'); if(first) setTimeout(function(){ first.focus(); }, 50); }
+    else if(returnFocus){ hamb.focus(); }
   }
-  hamb.addEventListener('click', function(){ setOpen(!drawer.classList.contains('open')); });
+  hamb.addEventListener('click', function(){ setOpen(!drawer.classList.contains('open'), true); });
   drawer.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){ setOpen(false); });
+    a.addEventListener('click', function(){ setOpen(false, false); });
   });
   document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape' && drawer.classList.contains('open')) setOpen(false);
+    if(e.key === 'Escape' && drawer.classList.contains('open')) setOpen(false, true);
+  });
+  window.addEventListener('resize', function(){
+    if(window.innerWidth > 1100 && drawer.classList.contains('open')) setOpen(false, false);
   });
 
+  /* Reveal on scroll */
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if(entry.isIntersecting){
@@ -1637,25 +1675,64 @@ ul{margin:0;padding:0;list-style:none}
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.rs-r').forEach(function(el){ io.observe(el); });
 
-  document.querySelectorAll('a[href^="#"]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      var id = a.getAttribute('href');
-      if(id.length > 1){
-        var el = document.querySelector(id);
-        if(el){
-          e.preventDefault();
-          var top = el.getBoundingClientRect().top + window.scrollY - 60;
-          window.scrollTo({ top: top, behavior: 'smooth' });
-        }
-      }
+  /* Highlight the current section in the navigation */
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.rs-nav-links a'));
+  var spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      navLinks.forEach(function(a){
+        if(a.getAttribute('href') === '#' + entry.target.id) a.setAttribute('aria-current', 'location');
+        else a.removeAttribute('aria-current');
+      });
     });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  ['top','leistungen','projekte','ueber','team','kontakt'].forEach(function(id){
+    var el = document.getElementById(id); if(el) spy.observe(el);
   });
 
+  /* Service links preselect the service in the form */
+  var leistung = document.getElementById('rs-leistung');
+  document.querySelectorAll('[data-leistung]').forEach(function(a){
+    a.addEventListener('click', function(){ if(leistung) leistung.value = a.getAttribute('data-leistung'); });
+  });
+
+  /* Contact form: inline validation + confirmation */
   var form = document.getElementById('rs-kform');
   if(form){
+    var rules = [
+      { id:'rs-vorname',  msg:'Bitte geben Sie Ihren Vornamen ein.' },
+      { id:'rs-nachname', msg:'Bitte geben Sie Ihren Nachnamen ein.' },
+      { id:'rs-email',    msg:'Bitte geben Sie eine gültige E-Mail-Adresse ein, z. B. name@beispiel.ch.' }
+    ];
+    function check(rule){
+      var el = document.getElementById(rule.id);
+      var err = document.getElementById(rule.id + '-err');
+      el.value = el.value.trim();
+      var ok = el.checkValidity();
+      el.setAttribute('aria-invalid', String(!ok));
+      err.textContent = ok ? '' : rule.msg;
+      err.hidden = ok;
+      return ok;
+    }
+    rules.forEach(function(rule){
+      var el = document.getElementById(rule.id);
+      el.addEventListener('blur', function(){ if(el.value || el.getAttribute('aria-invalid')) check(rule); });
+      el.addEventListener('input', function(){ if(el.getAttribute('aria-invalid') === 'true') check(rule); });
+    });
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      alert('Danke für Ihre Anfrage. Wir melden uns innerhalb eines Werktages.');
+      var invalid = rules.filter(function(rule){ return !check(rule); });
+      if(invalid.length){
+        document.getElementById(invalid[0].id).focus();
+        document.getElementById('rs-kform-status').textContent =
+          invalid.length === 1 ? 'Bitte prüfen Sie ein Feld.' : 'Bitte prüfen Sie ' + invalid.length + ' Felder.';
+        return;
+      }
+      /* Mockup: hier die Anfrage an den Server bzw. Formulardienst senden. */
+      document.getElementById('rs-kform-fields').hidden = true;
+      var ok = document.getElementById('rs-kform-success');
+      ok.hidden = false;
+      ok.focus();
       form.reset();
     });
   }
