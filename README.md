@@ -105,6 +105,15 @@ Tokens in `:root` near the top of `index.html`:
 | `--rs-ink` | `#0F172A` | Headings |
 | `--rs-gray-100` | `#F8F9FA` | Section alt background |
 
+### Design variants
+
+A switcher at the bottom left toggles between two designs:
+
+- **Neu**: the brand-book mockup (red `#B8342E`, navy, PS monogram). Default.
+- **Aktuell**: the current company logo (`assets/img/logo-romeo-sohn.png`) with its colours, blue `#0071BC` and grey `#BDBFC1`, and charcoal dark sections.
+
+The choice is remembered in the browser. Share a variant directly with `?design=aktuell`. The variant only overrides the colour tokens (see `html[data-design="aktuell"]` in `index.html`). Remove the `.rs-design-switch` block before going live.
+
 ### Typography
 
 Google Fonts: Poppins (700, 800 for headings; 500, 600 for nav and labels) + Inter (400, 500 for body).

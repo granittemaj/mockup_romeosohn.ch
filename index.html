@@ -10,7 +10,15 @@
 <meta property="og:description" content="Ihr Gipsergeschäft in Schlieren ZH. Qualität, Sauberkeit und Effizienz.">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<script>document.documentElement.classList.add('js')</script>
+<script>
+(function(d){
+  d.classList.add('js');
+  var v = null;
+  try { v = new URLSearchParams(location.search).get('design'); } catch(e){}
+  if(v !== 'aktuell' && v !== 'neu'){ try { v = localStorage.getItem('rs-design'); } catch(e){} }
+  if(v === 'aktuell') d.setAttribute('data-design','aktuell');
+})(document.documentElement);
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -46,6 +54,7 @@
   --rs-red-3:#C84A44;
   --rs-red-soft:#FBE9E7;
   --rs-red-light:#E2716B; /* red for small text on navy: 5.2:1 */
+  --rs-red-rgb:184,52,46;
   --rs-navy:#14213D;
   --rs-navy-2:#1E2D4F;
   --rs-navy-3:#2A3A5E;
@@ -348,7 +357,7 @@ ul{margin:0;padding:0;list-style:none}
 .rs-lc:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:transparent}
 .rs-lc-img{
   aspect-ratio:16/11;
-  background:linear-gradient(135deg, #2a3142 0%, #14213D 100%);
+  background:linear-gradient(135deg, var(--rs-navy-3) 0%, var(--rs-navy) 100%);
   position:relative;
   overflow:hidden;
 }
@@ -533,7 +542,7 @@ ul{margin:0;padding:0;list-style:none}
   position:absolute;
   top:-40px;right:-40px;
   width:240px;height:240px;
-  background:radial-gradient(circle, rgba(184,52,46,.15) 0%, transparent 70%);
+  background:radial-gradient(circle, rgba(var(--rs-red-rgb),.15) 0%, transparent 70%);
 }
 .rs-stats-side::after{
   content:'';
@@ -585,7 +594,7 @@ ul{margin:0;padding:0;list-style:none}
   position:absolute;
   top:0;right:0;
   width:50%;height:100%;
-  background:radial-gradient(circle at 60% 50%, rgba(184,52,46,.1) 0%, transparent 60%);
+  background:radial-gradient(circle at 60% 50%, rgba(var(--rs-red-rgb),.1) 0%, transparent 60%);
 }
 .rs-vision-grid{
   display:grid;
@@ -777,7 +786,7 @@ ul{margin:0;padding:0;list-style:none}
 .rs-kfield input:focus,.rs-kfield select:focus,.rs-kfield textarea:focus{
   outline:none;
   border-color:var(--rs-red);
-  box-shadow:0 0 0 3px rgba(184,52,46,.18);
+  box-shadow:0 0 0 3px rgba(var(--rs-red-rgb),.18);
 }
 .rs-kform-submit{width:100%;justify-content:center;margin-top:8px}
 
@@ -798,7 +807,7 @@ ul{margin:0;padding:0;list-style:none}
   content:'';position:absolute;
   top:-20px;right:-20px;
   width:120px;height:120px;
-  background:radial-gradient(circle, rgba(184,52,46,.18) 0%, transparent 70%);
+  background:radial-gradient(circle, rgba(var(--rs-red-rgb),.18) 0%, transparent 70%);
 }
 .rs-ki{display:flex;align-items:flex-start;gap:16px;padding:14px 0;min-height:60px}
 .rs-ki + .rs-ki{border-top:1px solid var(--rs-line)}
@@ -811,7 +820,7 @@ ul{margin:0;padding:0;list-style:none}
   display:inline-flex;align-items:center;justify-content:center;
   flex:none;
 }
-.rs-kinfo-card.dark .rs-ki-icon{background:rgba(184,52,46,.18);color:#fff}
+.rs-kinfo-card.dark .rs-ki-icon{background:rgba(var(--rs-red-rgb),.18);color:#fff}
 .rs-ki-text{flex:1;min-width:0;position:relative;z-index:1}
 .rs-ki-text strong{
   display:block;
@@ -1013,7 +1022,7 @@ main:focus{outline:none}
 .rs-lc-cta{background:var(--rs-navy);border-color:var(--rs-navy);color:#fff;position:relative}
 .rs-lc-cta::before{
   content:'';position:absolute;top:-60px;right:-60px;width:220px;height:220px;
-  background:radial-gradient(circle, rgba(184,52,46,.22) 0%, transparent 70%);
+  background:radial-gradient(circle, rgba(var(--rs-red-rgb),.22) 0%, transparent 70%);
   pointer-events:none;
 }
 .rs-lc-cta-inner{position:relative;padding:36px 32px;display:flex;flex-direction:column;justify-content:center;flex:1}
@@ -1086,6 +1095,63 @@ main:focus{outline:none}
   .rs-hero-actions .rs-btn,.rs-vision-actions .rs-btn{flex:1 1 100%;justify-content:center}
   .rs-lc-cta-inner{padding:32px 24px}
 }
+
+/* DESIGN VARIANT: current logo (blue + grey) */
+html[data-design="aktuell"]{
+  --rs-red:#0071BC;
+  --rs-red-2:#005A96;
+  --rs-red-3:#2E8FD3;
+  --rs-red-soft:#E5F1FA;
+  --rs-red-light:#6CB8EC;
+  --rs-red-rgb:0,113,188;
+  --rs-navy:#2B2F35;
+  --rs-navy-2:#363B42;
+  --rs-navy-3:#454B53;
+  --rs-dark:#1F2226;
+}
+.rs-logo-orig{display:none;height:60px;width:auto}
+html[data-design="aktuell"] .rs-nav .rs-brand{padding:0}
+@media(max-width:600px){html[data-design="aktuell"] .rs-nav .rs-logo-orig{height:46px}}
+html[data-design="aktuell"] .rs-brand .rs-mono,
+html[data-design="aktuell"] .rs-brand .rs-wm{display:none}
+html[data-design="aktuell"] .rs-logo-orig{display:block}
+html[data-design="aktuell"] .rs-foot-brand .rs-logo-orig{
+  height:64px;box-sizing:content-box;
+  background:#fff;padding:12px 16px;border-radius:var(--r-md);
+}
+
+/* DESIGN SWITCHER (mockup tool) */
+.rs-design-switch{
+  position:fixed;left:16px;bottom:16px;z-index:90;
+  display:flex;align-items:center;gap:4px;
+  padding:4px 4px 4px 12px;
+  background:rgba(255,255,255,.96);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border:1px solid var(--rs-line);border-radius:999px;
+  box-shadow:var(--shadow-md);
+  font-family:var(--display);
+}
+.rs-design-switch-label{
+  font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--rs-slate);margin-right:4px;
+}
+.rs-design-switch button{
+  display:inline-flex;align-items:center;gap:8px;
+  min-height:40px;padding:0 14px;border-radius:999px;
+  font-size:13px;font-weight:600;color:var(--rs-ink);
+  transition:background .2s,color .2s;
+}
+.rs-design-switch button:hover{background:var(--rs-gray-100)}
+.rs-design-switch button[aria-pressed="true"]{background:var(--rs-ink);color:#fff}
+.rs-design-swatch{display:inline-flex}
+.rs-design-swatch i{width:10px;height:10px;border-radius:50%;box-shadow:0 0 0 1.5px #fff}
+.rs-design-swatch i + i{margin-left:-3px}
+@media(max-width:600px){
+  .rs-design-switch{left:12px;bottom:12px}
+  .rs-design-switch-label{display:none}
+  .rs-design-switch button{padding:0 12px}
+}
+@media print{.rs-design-switch{display:none}}
 </style>
 </head>
 <body>
@@ -1106,6 +1172,7 @@ main:focus{outline:none}
         <span class="rs-wm-row">Romeo<span class="rs-wm-plus">+</span>Sohn</span>
         <span class="rs-wm-sub">GMBH</span>
       </span>
+      <img class="rs-logo-orig" src="assets/img/logo-romeo-sohn.png" alt="" width="400" height="194">
     </a>
     <ul class="rs-nav-links">
       <li><a href="#leistungen">Leistungen</a></li>
@@ -1586,6 +1653,7 @@ main:focus{outline:none}
             <span class="rs-wm-row">Romeo<span class="rs-wm-plus">+</span>Sohn</span>
             <span class="rs-wm-sub">GMBH</span>
           </span>
+          <img class="rs-logo-orig" src="assets/img/logo-romeo-sohn.png" alt="" width="400" height="194">
         </a>
         <p class="rs-foot-desc">Ihr Gipsergeschäft in Schlieren ZH. Qualität, Sauberkeit und Effizienz im Raum Zürich.</p>
         <div class="rs-foot-tel">
@@ -1635,12 +1703,46 @@ main:focus{outline:none}
   </div>
 </footer>
 
+<!-- Design-Umschalter (nur für die Mockup-Vorschau) -->
+<div class="rs-design-switch" role="group" aria-label="Design-Variante wählen">
+  <span class="rs-design-switch-label" aria-hidden="true">Design</span>
+  <button type="button" data-design-set="neu" aria-pressed="true">
+    <span class="rs-design-swatch" aria-hidden="true"><i style="background:#B8342E"></i><i style="background:#14213D"></i></span>Neu
+  </button>
+  <button type="button" data-design-set="aktuell" aria-pressed="false">
+    <span class="rs-design-swatch" aria-hidden="true"><i style="background:#0071BC"></i><i style="background:#BDBFC1"></i></span>Aktuell
+  </button>
+</div>
+
 <script>
 (function(){
   var nav = document.getElementById('rs-nav');
   function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 30); }
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
+
+  /* Design switcher: "neu" (mockup) vs "aktuell" (current logo) */
+  var root = document.documentElement;
+  var themeMeta = document.querySelector('meta[name="theme-color"]');
+  var designButtons = document.querySelectorAll('[data-design-set]');
+  function applyDesign(v){
+    if(v === 'aktuell') root.setAttribute('data-design', 'aktuell'); else root.removeAttribute('data-design');
+    designButtons.forEach(function(b){ b.setAttribute('aria-pressed', String(b.getAttribute('data-design-set') === v)); });
+    if(themeMeta) themeMeta.setAttribute('content', v === 'aktuell' ? '#0071BC' : '#B8342E');
+  }
+  applyDesign(root.getAttribute('data-design') === 'aktuell' ? 'aktuell' : 'neu');
+  designButtons.forEach(function(b){
+    b.addEventListener('click', function(){
+      var v = b.getAttribute('data-design-set');
+      applyDesign(v);
+      try { localStorage.setItem('rs-design', v); } catch(e){}
+      try {
+        var u = new URL(location.href);
+        if(v === 'aktuell') u.searchParams.set('design', 'aktuell'); else u.searchParams.delete('design');
+        history.replaceState(null, '', u);
+      } catch(e){}
+    });
+  });
 
   /* Mobile menu */
   var hamb = document.getElementById('rs-hamb');
