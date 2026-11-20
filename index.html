@@ -298,7 +298,7 @@ ul{margin:0;padding:0;list-style:none}
 }
 .rs-hero-stats{
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,260px));
+  grid-template-columns:repeat(4,1fr);
   gap:32px;
   padding:48px 0 64px;
   margin-top:48px;
@@ -334,11 +334,9 @@ ul{margin:0;padding:0;list-style:none}
 .rs-leis-head .rs-sec-head{margin-bottom:0}
 .rs-leis-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(4,1fr);
   gap:24px;
 }
-.rs-leis-grid > :first-child{grid-row:span 2;display:flex;flex-direction:column}
-.rs-leis-grid > :first-child .rs-lc-img{flex:1;min-height:320px}
 .rs-lc{
   background:#fff;
   border:1px solid var(--rs-line);
@@ -379,7 +377,7 @@ ul{margin:0;padding:0;list-style:none}
 }
 .rs-lc-body{padding:28px;display:flex;flex-direction:column;flex:1}
 .rs-lc-body h3{
-  font-size:22px;
+  font-size:21px;
   font-weight:700;
   margin-bottom:12px;
   letter-spacing:-0.01em;
@@ -914,6 +912,9 @@ ul{margin:0;padding:0;list-style:none}
 }
 
 /* RESPONSIVE */
+@media(max-width:1240px){
+  .rs-leis-grid{grid-template-columns:repeat(2,1fr)}
+}
 @media(max-width:1100px){
   .rs-nav-links{display:none}
   .rs-hamb{display:inline-flex}
@@ -928,8 +929,6 @@ ul{margin:0;padding:0;list-style:none}
   }
   .rs-hero-photo::after{display:none}
   .rs-leis-grid{grid-template-columns:repeat(2,1fr)}
-  .rs-leis-grid > :first-child{grid-row:auto}
-  .rs-leis-grid > :first-child .rs-lc-img{min-height:auto}
   .rs-proj-grid{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,260px)}
   .rs-proj-card:nth-child(1){grid-column:span 2;grid-row:auto}
   .rs-proj-card:nth-child(4){grid-column:auto}
@@ -1165,6 +1164,8 @@ main:focus{outline:none}
     <div class="rs-hero-stats">
       <div class="rs-r"><div class="rs-hs-num">7</div><div class="rs-hs-lbl">Fachbereiche</div></div>
       <div class="rs-r"><div class="rs-hs-num">VKF</div><div class="rs-hs-lbl">Brandschutz</div></div>
+      <div class="rs-r"><div class="rs-hs-num">Mo–Sa</div><div class="rs-hs-lbl">Für Sie erreichbar</div></div>
+      <div class="rs-r"><div class="rs-hs-num">ZH</div><div class="rs-hs-lbl">Schlieren &amp; Raum Zürich</div></div>
     </div>
   </div>
 </section>
